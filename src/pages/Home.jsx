@@ -89,7 +89,7 @@ export default function Home() {
           </h1>
           
           <p className="text-base sm:text-lg text-white/60 max-w-2xl font-light leading-relaxed mb-16 px-4 opacity-0 animate-[apple-fade-up_1s_0.6s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-            KVS Infra is a Tirupati-based real estate development company focused on land aggregation, layout development, and plotted projects. Since 2019, we have built a high-growth model unlocking land value in emerging corridors &mdash; now expanding into Delhi NCR.
+            KVS Infra is a real estate development company specializing in strategic land banking, land aggregation, and premium plotted communities. Since 2019, we have been creating long-term value through carefully planned developments, with a growing presence from Tirupati to Delhi NCR.
           </p>
 
         </div>
@@ -111,7 +111,7 @@ export default function Home() {
       </h2>
     </div>
     <p className="text-base md:text-lg text-white/40 max-w-md font-light leading-relaxed mt-8 md:mt-0 md:pl-8 border-l-0 md:border-l border-white/10 transition-colors duration-500 group-hover/header:text-white/60">
-      Explore our collection of plotted layouts and gated villa communities across Tirupati and Delhi NCR, built for lasting value.
+      We transform strategically located land into planned communities and investment opportunities, delivering sustainable growth and lasting value for generations.
     </p>
   </div>
 
@@ -232,18 +232,18 @@ export default function Home() {
               <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6 text-sage">
                 <Compass className="w-5 h-5" />
               </div>
-              <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-sage mb-3 block">Resource Guide</span>
+              <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-sage mb-3 block">Investment Guide</span>
               <h3 className="text-3xl md:text-5xl font-light tracking-tight text-white mb-5">
                 Growth <span className="font-serif italic font-normal text-sage font-cursive">Opportunities</span>
               </h3>
               <p className="text-sm md:text-base text-white/50 font-light leading-relaxed mb-8 max-w-md">
-                Learn how KVS Infra supports buyers and investors through structured land opportunities, planning clarity, and project execution.
+                Discover strategically selected land opportunities designed for long-term appreciation, transparent planning, and sustainable investment growth.
               </p>
               <Link 
                 to="/for-buyers" 
                 className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white group-hover:text-sage transition-colors duration-300 cursor-pointer"
               >
-                <span>Discover Guide</span>
+                <span>Explore Opportunities</span>
                 <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -267,16 +267,16 @@ export default function Home() {
               </div>
               <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-sage mb-3 block">Development Model</span>
               <h3 className="text-3xl md:text-5xl font-light tracking-tight text-white mb-5">
-                About <span className="font-serif italic font-normal text-sage font-cursive">Our Model</span>
+                Our <span className="font-serif italic font-normal text-sage font-cursive">Development Strategy</span>
               </h3>
               <p className="text-sm md:text-base text-white/50 font-light leading-relaxed mb-8">
-                Learn how KVS Infra identifies land, plans layouts, and creates structured growth corridors with long-term value in mind.
+                From strategic land acquisition to master-planned layouts, our development model is built to unlock value through disciplined planning and future-ready infrastructure.
               </p>
               <Link 
                 to="/about-barbados" 
                 className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white group-hover:text-sage transition-colors duration-300 cursor-pointer"
               >
-                <span>Explore Model</span>
+                <span>Learn More</span>
                 <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
@@ -359,7 +359,7 @@ export default function Home() {
             Intelligence Network
           </span>
           <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-white mb-6 max-w-2xl leading-tight">
-            Keep yourself updated on the latest luxury <span className="font-serif italic font-normal text-sage font-cursive block sm:inline">property available</span>
+            Stay Updated on Our <span className="font-serif italic font-normal text-sage font-cursive block sm:inline">latest developments</span>
           </h2>
           
           {/* Subscriptions Array Input Layout */}
@@ -370,7 +370,7 @@ export default function Home() {
             <input 
               type="email" 
               required
-              placeholder="Enter your private email address"
+              placeholder="Enter your email address"
               className="flex-grow bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:bg-white/[0.06] transition-all placeholder:text-white/30"
             />
             <button 
@@ -383,7 +383,7 @@ export default function Home() {
                   <span>Subscribed</span>
                 </div>
               ) : (
-                <span>Access Network</span>
+                <span>Subscribe</span>
               )}
             </button>
           </form>
@@ -392,7 +392,7 @@ export default function Home() {
           <div className="flex items-start gap-3 max-w-3xl text-left border-t border-white/[0.04] pt-8">
             <ShieldCheck className="w-4 h-4 text-white/20 shrink-0 mt-0.5" />
             <p className="text-[10px] text-white/30 leading-relaxed text-justify">
-              By providing KVS Infra your contact information, you acknowledge and agree to our Privacy Policy and consent to receiving project updates and marketing communications, including through automated calls, texts, and emails. This consent isn’t necessary for purchasing any products or services and you may opt out at any time. Message and data rates may apply.
+              Subscribe to receive updates about upcoming layouts, investment opportunities, and project launches from KVS Infra. You may unsubscribe at any time.
             </p>
           </div>
         </div>

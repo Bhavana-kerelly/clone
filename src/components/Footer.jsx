@@ -178,20 +178,13 @@ export default function Footer() {
 
           {/* Real Estate Micro-Identity Core Block */}
           <div className="lg:col-span-5 flex flex-col items-start text-left" style={{ transform: 'translateZ(60px)' }}>
-            <div className="flex items-center gap-4 mb-6 group/logo cursor-pointer">
-              <div className="w-14 h-14 rounded-2xl bg-white text-[#05080E] flex items-center justify-center p-3 shadow-xl transition-all duration-700 group-hover/logo:bg-sage group-hover/logo:scale-105">
-                <svg className="w-full h-full fill-current" viewBox="0 0 32 38">
-                  <path d="M15.7498 37.0254C15.6536 37.0254 15.5573 36.9931 15.4932 36.9608L0.288693 28.328C0.032077 28.1663 -0.0641539 27.843 0.0962309 27.5843C0.256616 27.3257 0.577386 27.2287 0.834001 27.3903L15.7819 35.8615L30.4411 27.455V11.0301L15.8781 19.1455C15.7177 19.2425 15.5253 19.2425 15.3328 19.1455L0.288693 10.4804C0.0962309 10.3834 0 10.1894 0 9.99542C0 9.80143 0.0962309 9.60743 0.288693 9.51044L15.3328 1.0393C15.5894 0.877641 15.9102 0.974639 16.0706 1.26563C16.2309 1.52429 16.1347 1.84762 15.846 2.00928L1.63593 9.99542L15.5894 18.0462L30.6656 9.60744C30.826 9.51044 31.0505 9.51044 31.2109 9.60744C31.3713 9.70443 31.4675 9.89843 31.4675 10.0924V27.746C31.4675 27.94 31.3713 28.134 31.1788 28.231L15.9743 36.9608C15.9423 36.9931 15.846 37.0254 15.7498 37.0254Z" />
-                </svg>
+            <div className="flex flex-col gap-2 mb-6 group/logo cursor-pointer">
+              <div className="bg-white px-4 py-3 rounded-2xl w-fit shadow-xl transition-all duration-700 group-hover/logo:shadow-sage/20 group-hover/logo:-translate-y-1">
+                <img src="/logo.png" alt="KVS Infra logo" className="h-8 w-auto object-contain" />
               </div>
-              <div>
-                <h4 className="font-display text-3xl tracking-[0.05em] font-light uppercase leading-none text-white">
-                  KVS <span className="font-serif italic font-normal text-sage font-cursive tracking-normal">Infra</span>
-                </h4>
-                <span className="text-[9px] tracking-[0.4em] uppercase leading-none mt-2 block text-white/30 font-bold">
-                  SHAPING LAND. CREATING VALUE.
-                </span>
-              </div>
+              <span className="text-[9px] tracking-[0.4em] uppercase leading-none mt-1 block text-white/30 font-bold">
+                SHAPING LAND. CREATING VALUE.
+              </span>
             </div>
 
             <p className="text-sm text-white/40 leading-relaxed font-light mb-8 max-w-sm">
