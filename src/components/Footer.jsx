@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react';
-
+import { Mail, Phone, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight, Link as LinkIcon, Camera, MessageCircle, Video } from 'lucide-react';
 export default function Footer() {
   // 3D Perspective Matrix Tracking States
   const containerRef = useRef(null);
@@ -201,16 +200,16 @@ export default function Footer() {
 
             <div className="flex items-center gap-4 mb-10">
               <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <Linkedin className="w-4 h-4" />
+                <LinkIcon className="w-4 h-4" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <Instagram className="w-4 h-4" />
+                <Camera className="w-4 h-4" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <Facebook className="w-4 h-4" />
+                <MessageCircle className="w-4 h-4" />
               </a>
               <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <Youtube className="w-4 h-4" />
+                <Video className="w-4 h-4" />
               </a>
             </div>
 
