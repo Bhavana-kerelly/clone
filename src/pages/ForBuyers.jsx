@@ -78,14 +78,14 @@ export default function ForBuyers() {
 
         <div ref={heroRef} className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
           <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#c4a468] mb-4">
-            Growth & Partners
+            YOUR INVESTMENT JOURNEY
           </span>
           <h1 className="font-display text-5xl sm:text-7xl font-extralight tracking-tight leading-none text-white mb-6">
-            Growth <span className="font-serif italic font-normal text-[#c4a468]">Opportunities</span>
+            From Vision to <span className="font-serif italic font-normal text-[#c4a468]">Ownership</span>
           </h1>
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#c4a468] to-transparent mb-6"></div>
           <p className="text-sm sm:text-lg text-white/80 max-w-2xl font-light leading-relaxed">
-            Discover how KVS Infra supports investors, landowners, and families through structured land opportunities, transparent planning, and disciplined execution.
+            Every KVS Infra project is designed with transparency, strategic planning, and long-term value. From selecting the right opportunity to securing your investment, our experienced team ensures every step is simple, informed, and dependable.
           </p>
         </div>
       </section>
@@ -99,9 +99,9 @@ export default function ForBuyers() {
             <Info className="w-5 h-5 text-[#c4a468]" />
           </div>
           <div className="text-left">
-            <h2 className="font-serif text-2xl font-normal text-dark-blue mb-3">The KVS Approach</h2>
+            <h2 className="font-serif text-2xl font-normal text-dark-blue mb-3">The KVS Advantage</h2>
             <p className="text-sm sm:text-base text-dark-blue/80 leading-relaxed font-light text-justify">
-              KVS Infra creates value by combining land acquisition, planning, approvals, and infrastructure delivery into one structured development model. Whether you are an investor seeking growth or a family looking for a long-term home site, our projects are built to be clear and dependable.
+              KVS Infra combines strategic land acquisition, thoughtful planning, legal clarity, and infrastructure development into one integrated process. Whether you're investing for future appreciation or purchasing land for your family, every project is built on trust, quality, and long-term value.
             </p>
           </div>
         </div>
@@ -113,16 +113,16 @@ export default function ForBuyers() {
               <Scale className="w-5 h-5 text-[#c4a468]" />
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-normal text-dark-blue tracking-wide">
-              1. Project Review & Due Diligence
+              1. Discover the Right Opportunity
             </h2>
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-sm sm:text-base text-dark-blue/80 leading-relaxed font-light text-justify">
-              Every KVS Infra opportunity begins with a careful review of location strength, title standing, and project viability. Buyers receive clear information about the site, surrounding growth, and the development roadmap before making their decision.
+              We begin by understanding your investment goals and helping you identify projects that align with your budget, location preferences, and long-term objectives.
             </p>
             <div className="bg-[#c4a468]/5 border border-[#c4a468]/20 rounded-xl p-5 mt-2">
               <p className="text-sm text-dark-blue font-medium leading-relaxed">
-                Our team works with trusted partners to keep the process clear, practical, and aligned with the buyer’s intended use.
+                Our advisors provide complete project insights, location advantages, future growth potential, and documentation support so every investment decision is made with confidence.
               </p>
             </div>
           </div>
@@ -135,27 +135,27 @@ export default function ForBuyers() {
               <FileText className="w-5 h-5 text-[#c4a468]" />
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-normal text-dark-blue tracking-wide">
-              2. The Development Journey
+              2. Secure Your Investment
             </h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-2">
             <div className="bg-white/80 border border-white p-6 rounded-2xl shadow-sm hover:border-[#c4a468]/30 transition-all duration-300">
-              <span className="text-[10px] font-mono font-bold text-[#c4a468] uppercase tracking-widest block mb-2">Stage A: Deposit</span>
+              <span className="text-[10px] font-mono font-bold text-[#c4a468] uppercase tracking-widest block mb-2">Stage A — Project Selection</span>
               <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed font-light">
-                From site selection to registration, KVS Infra follows a transparent project path that keeps buyers informed at every milestone.
+                Explore carefully planned developments with clear layouts, strategic locations, and verified project information.
               </p>
             </div>
             <div className="bg-white/80 border border-white p-6 rounded-2xl shadow-sm hover:border-[#c4a468]/30 transition-all duration-300">
-              <span className="text-[10px] font-mono font-bold text-[#c4a468] uppercase tracking-widest block mb-2">Stage B: Exchange</span>
+              <span className="text-[10px] font-mono font-bold text-[#c4a468] uppercase tracking-widest block mb-2">Stage B — Documentation</span>
               <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed font-light">
-                Our team coordinates land planning, infrastructure readiness, and documentation so the experience feels structured rather than uncertain.
+                Receive complete guidance for documentation, approvals, booking procedures, and ownership verification.
               </p>
             </div>
             <div className="bg-white/80 border border-white p-6 rounded-2xl shadow-sm hover:border-[#c4a468]/30 transition-all duration-300">
-              <span className="text-[10px] font-mono font-bold text-[#c4a468] uppercase tracking-widest block mb-2">Stage C: Completion</span>
+              <span className="text-[10px] font-mono font-bold text-[#c4a468] uppercase tracking-widest block mb-2">Stage C — Registration & Support</span>
               <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed font-light">
-                Delivery is paced around approvals, readiness, and buyer confidence so each stage feels measurable and predictable.
+                Our team assists throughout the registration process and continues providing post-purchase support whenever required.
               </p>
             </div>
           </div>
@@ -168,16 +168,16 @@ export default function ForBuyers() {
               <Landmark className="w-5 h-5 text-[#c4a468]" />
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-normal text-dark-blue tracking-wide">
-              3. Ownership Models &amp; Long-Term Planning
+              3. Building Long-Term Value
             </h2>
           </div>
           <div className="flex flex-col gap-4">
             <p className="text-sm sm:text-base text-dark-blue/80 leading-relaxed font-light text-justify">
-              Buyers can choose the structure that best supports their purpose, whether for personal use, investment, or future resale. KVS Infra supports this decision with practical guidance and transparent project information.
+              Every KVS Infra development is planned to maximize future appreciation through strategic locations, organized infrastructure, and disciplined project execution. Whether you're investing today or planning for the next generation, our projects are designed to grow with your ambitions.
             </p>
             <div className="bg-[#c4a468]/5 border border-[#c4a468]/20 rounded-xl p-5 mt-2">
               <p className="text-sm text-dark-blue font-medium leading-relaxed">
-                We recommend reviewing your goals with advisers, but our role remains to make the project itself clear, credible, and well-executed.
+                Our commitment extends beyond the sale by ensuring transparency, quality development, and continuous customer support throughout your ownership journey.
               </p>
             </div>
           </div>
@@ -190,31 +190,39 @@ export default function ForBuyers() {
               <DollarSign className="w-5 h-5 text-[#c4a468]" />
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-normal text-dark-blue tracking-wide">
-              4. Project Costs &amp; Ownership Considerations
+              4. Why Invest with KVS Infra?
             </h2>
           </div>
           <p className="text-sm sm:text-base text-dark-blue/80 leading-relaxed font-light text-justify">
-            When buying into a development project, the buyer should understand the expected costs, approvals, and service structure. Here is a clear overview:
+            When choosing a land investment partner, confidence comes from transparency, planning, and execution. KVS Infra focuses on delivering projects that create sustainable value.
           </p>
           
           {/* Apple-Style Glass Breakdown Table Spec */}
           <div className="bg-white/90 border border-white/50 rounded-2xl p-6 mt-2 shadow-sm">
             <div className="flex flex-col gap-4 text-xs sm:text-sm">
               <div className="flex justify-between border-b border-dark-blue/5 pb-3">
-                <span className="font-medium text-dark-blue">Documentation Support</span>
-                <span className="font-light text-dark-blue/70">Professional review and title clarity assistance</span>
+                <span className="font-medium text-dark-blue">Strategic Locations</span>
+                <span className="font-light text-dark-blue/70 text-right">Positioned in emerging high-growth corridors</span>
               </div>
               <div className="flex justify-between border-b border-dark-blue/5 pb-3">
-                <span className="font-medium text-dark-blue">Infrastructure Planning</span>
-                <span className="font-light text-dark-blue/70">Roads, utilities, and layout execution built into the project</span>
+                <span className="font-medium text-dark-blue">Clear Documentation</span>
+                <span className="font-light text-dark-blue/70 text-right">Transparent legal and ownership process</span>
               </div>
               <div className="flex justify-between border-b border-dark-blue/5 pb-3">
-                <span className="font-medium text-dark-blue">Project Approvals</span>
-                <span className="font-light text-dark-blue/70">Clear review of land, permissions, and development readiness</span>
+                <span className="font-medium text-dark-blue">Planned Infrastructure</span>
+                <span className="font-light text-dark-blue/70 text-right">Roads, utilities, and organized layouts</span>
+              </div>
+              <div className="flex justify-between border-b border-dark-blue/5 pb-3">
+                <span className="font-medium text-dark-blue">Long-Term Appreciation</span>
+                <span className="font-light text-dark-blue/70 text-right">Projects selected for future value growth</span>
+              </div>
+              <div className="flex justify-between border-b border-dark-blue/5 pb-3">
+                <span className="font-medium text-dark-blue">Customer Support</span>
+                <span className="font-light text-dark-blue/70 text-right">Guidance before, during, and after purchase</span>
               </div>
               <div className="flex justify-between pb-1">
-                <span className="font-medium text-dark-blue">Community Management</span>
-                <span className="font-light text-dark-blue/70">Structured support for plotted communities and future amenities</span>
+                <span className="font-medium text-dark-blue">Trusted Development</span>
+                <span className="font-light text-dark-blue/70 text-right">Disciplined execution with investor-focused planning</span>
               </div>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight, Linkedin, Instagram, Facebook, Youtube } from 'lucide-react';
 
 export default function Footer() {
   // 3D Perspective Matrix Tracking States
@@ -18,7 +18,7 @@ export default function Footer() {
       if (!containerRef.current) return;
       const rect = containerRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      
+
       // Calculate how far the footer is into the viewport window
       if (rect.top < viewportHeight) {
         const distanceToTop = viewportHeight - rect.top;
@@ -35,28 +35,28 @@ export default function Footer() {
     if (!containerRef.current) return;
     const container = containerRef.current;
     const rect = container.getBoundingClientRect();
-    
+
     // Core centers mapping
     const cx = rect.left + rect.width / 2;
     const cy = rect.top + rect.height / 2;
-    
+
     // Normalized offset coordinate vectors (-1 to 1)
     const nx = (e.clientX - cx) / (rect.width / 2);
     const ny = (e.clientY - cy) / (rect.height / 2);
-    
+
     setCoords({ x: nx, y: ny });
   };
 
   // Safe structural tilt constants
   const tiltX = (coords.y * -4).toFixed(2); // Maximum 4 degrees vertical tilt
   const tiltY = (coords.x * 4).toFixed(2);  // Maximum 4 degrees horizontal tilt
-  
+
   // Specular reflection matrix mapping
   const lightPositionX = ((coords.x + 1) * 50).toFixed(1);
   const lightPositionY = ((coords.y + 1) * 50).toFixed(1);
 
   return (
-    <footer 
+    <footer
       ref={containerRef}
       onClassName="bg-[#04060A]"
       onMouseMove={handleGlobalMouseMove}
@@ -68,12 +68,12 @@ export default function Footer() {
       className="relative min-h-screen flex items-center justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-16 overflow-hidden bg-[#05080E] text-white selection:bg-sage/20 selection:text-sage"
       style={{ perspective: '2000px' }}
     >
-      
+
       {/* LAYER 1: CINEMATIC MULTI-AXIS PARALLAX VIEWPORT LAYER */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div 
+        <div
           className="absolute inset-0 w-full h-[125%] -top-[15%] transition-transform duration-[400ms] ease-out will-change-transform"
-          style={{ 
+          style={{
             transform: `translateY(${parallaxY}px) scale(1.05)`,
             backgroundImage: `url('https://framerusercontent.com/images/HShh91vuIwRlSwYw9lAjYX7yg.jpg')`,
             backgroundSize: 'cover',
@@ -83,9 +83,9 @@ export default function Footer() {
         {/* Apple Luxury Atmospheric Glass Coatings */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#05080E] via-[#05080E]/90 to-[#05080E]/70 backdrop-blur-2xl mix-blend-normal"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[#05080E]"></div>
-        
+
         {/* Kinetic Light Beam Generator */}
-        <div 
+        <div
           className="absolute w-[900px] h-[600px] rounded-full blur-[180px] opacity-40 transition-all duration-[1000ms] mix-blend-screen pointer-events-none"
           style={{
             top: `${lightPositionY}%`,
@@ -97,7 +97,7 @@ export default function Footer() {
       </div>
 
       {/* LAYER 2: INTERACTIVE 3D KINETIC ARCHITECTURAL CANVAS */}
-      <div 
+      <div
         className="w-full max-w-7xl mx-auto relative z-10 will-change-transform"
         style={{
           transform: isHovered ? `rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(10px)` : 'rotateX(0deg) rotateY(0deg) translateZ(0px)',
@@ -105,26 +105,26 @@ export default function Footer() {
           transition: isHovered ? 'transform 0.15s cubic-bezier(0.25, 1, 0.5, 1)' : 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)'
         }}
       >
-        
+
         {/* SECTION A: GLOWING GLASS-DECK METRICS GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-24 border-b border-white/[0.05]" style={{ transform: 'translateZ(40px)' }}>
-          
+
           {/* Deck Block 1 */}
           <div className="group relative bg-white/[0.01] hover:bg-white/[0.03] border border-white/[0.03] hover:border-white/10 rounded-[2.5rem] p-10 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden">
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-gradient-to-br from-white/[0.02] via-transparent to-transparent"></div>
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-between">
                 <span className="font-display text-7xl font-extralight tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
-                  25
+                  25+
                 </span>
                 <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
                   <Layers className="w-4 h-4" />
                 </div>
               </div>
               <div>
-                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">Projects Delivered</h5>
+                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">PROJECTS & DEVELOPMENTS</h5>
                 <p className="text-sm text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors">
-                  Land aggregation and plotted development initiatives across Tirupati, Chandragiri, and Delhi NCR.
+                  Successfully delivering plotted developments, land aggregation, and infrastructure-led projects across high-growth investment corridors.
                 </p>
               </div>
             </div>
@@ -136,16 +136,16 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-between">
                 <span className="font-display text-7xl font-extralight tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
-                  3
+                  3+
                 </span>
                 <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
                   <Globe className="w-4 h-4" />
                 </div>
               </div>
               <div>
-                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">Active Corridors</h5>
+                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">STRATEGIC GROWTH CORRIDORS</h5>
                 <p className="text-sm text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors">
-                  Stronger access to emerging growth zones with disciplined land and infrastructure planning.
+                  Expanding across Tirupati, Chandragiri, and Delhi NCR with carefully selected locations for long-term appreciation.
                 </p>
               </div>
             </div>
@@ -157,16 +157,16 @@ export default function Footer() {
             <div className="flex flex-col gap-6">
               <div className="flex items-center justify-between">
                 <span className="font-display text-7xl font-extralight tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
-                  1
+                  100%
                 </span>
                 <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
               </div>
               <div>
-                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">Goal Focus</h5>
+                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">COMMITMENT TO TRUST</h5>
                 <p className="text-sm text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors">
-                  To ensure a transparent, seamless, and pleasant transaction for all parties concerned.
+                  Delivering transparent processes, clear documentation, disciplined execution, and lasting value for every investor.
                 </p>
               </div>
             </div>
@@ -176,7 +176,7 @@ export default function Footer() {
 
         {/* SECTION B: TRANSLUCENT NAVIGATION STAGE HUB */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 py-24 items-start">
-          
+
           {/* Real Estate Micro-Identity Core Block */}
           <div className="lg:col-span-5 flex flex-col items-start text-left" style={{ transform: 'translateZ(60px)' }}>
             <div className="flex items-center gap-4 mb-6 group/logo cursor-pointer">
@@ -190,14 +190,29 @@ export default function Footer() {
                   KVS <span className="font-serif italic font-normal text-sage font-cursive tracking-normal">Infra</span>
                 </h4>
                 <span className="text-[9px] tracking-[0.4em] uppercase leading-none mt-2 block text-white/30 font-bold">
-                  Shaping Land. Creating Value.
+                  SHAPING LAND. CREATING VALUE.
                 </span>
               </div>
             </div>
 
-            <p className="text-sm text-white/40 leading-relaxed font-light mb-10 max-w-sm">
-              A Tirupati-based development company focused on land aggregation, layout planning, plotted projects, and long-term value creation across high-growth corridors.
+            <p className="text-sm text-white/40 leading-relaxed font-light mb-8 max-w-sm">
+              KVS Infra is a trusted real estate development company specializing in strategic land banking, plotted developments, and investment-focused communities. We create projects designed for sustainable growth, transparent ownership, and long-term value creation.
             </p>
+
+            <div className="flex items-center gap-4 mb-10">
+              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
+                <Youtube className="w-4 h-4" />
+              </a>
+            </div>
 
             {/* Direct Vector Access Points */}
             <div className="flex flex-col gap-4 w-full max-w-sm text-sm border-t border-white/[0.05] pt-8">
@@ -226,13 +241,13 @@ export default function Footer() {
 
           {/* Right Links Navigation Columns */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-16 lg:pl-16 font-light" style={{ transform: 'translateZ(50px)' }}>
-            
+
             {/* Column 1 */}
             <div className="flex flex-col gap-8">
-              <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-sage">Navigation</span>
+              <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-sage">COMPANY</span>
               <div className="flex flex-col gap-4 text-sm text-white/40">
-                {['Home', 'Properties Directory', 'Featured Developments', 'Growth Insights', 'About KVS Infra', 'Leadership & Strategy'].map((item, index) => (
-                  <Link 
+                {['Home', 'About Us', 'Our Projects', 'Investment Opportunities', 'Leadership', 'Contact Us', 'Quick Links'].map((item, index) => (
+                  <Link
                     key={index}
                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
                     onMouseEnter={() => setActiveTab(`nav-${index}`)}
@@ -248,10 +263,10 @@ export default function Footer() {
 
             {/* Column 2 */}
             <div className="flex flex-col gap-8">
-              <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-sage">Guides &amp; Policy</span>
+              <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-sage">RESOURCES</span>
               <div className="flex flex-col gap-4 text-sm text-white/40">
-                {['Growth Opportunities', 'Schedule Consultation', 'Privacy Policy', 'Cookie Preferences', 'Terms of Service'].map((item, index) => (
-                  <Link 
+                {['Why Invest with KVS Infra', 'Schedule a Site Visit', 'FAQs', 'Privacy Policy', 'Terms & Conditions'].map((item, index) => (
+                  <Link
                     key={index}
                     to="#"
                     onMouseEnter={() => setActiveTab(`policy-${index}`)}
@@ -271,12 +286,11 @@ export default function Footer() {
         {/* SECTION C: RADIAL BOUNDARY SUB FOOTER TERMINAL */}
         <div className="border-t border-white/[0.05] pt-12 mt-4 flex flex-col md:flex-row justify-between items-center text-[11px] font-light text-white/30 gap-6" style={{ transform: 'translateZ(30px)' }}>
           <p className="tracking-wide text-center md:text-left">
-            &copy; {new Date().getFullYear()} KVS Infra Pvt. Ltd. Portfolio platform engineered for structured development growth. All rights reserved.
+            &copy; {new Date().getFullYear()} KVS Infra. All Rights Reserved. Designed to create sustainable land investments and long-term value.
           </p>
           <div className="flex gap-8 uppercase font-medium tracking-widest text-[9px]">
-            <a href="#" className="hover:text-white transition-colors duration-300">Privacy</a>
-            <a href="#" className="hover:text-white transition-colors duration-300">Cookies</a>
-            <a href="#" className="hover:text-white transition-colors duration-300">Security</a>
+            <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
+            <a href="#" className="hover:text-white transition-colors duration-300">Terms & Conditions</a>
           </div>
         </div>
 

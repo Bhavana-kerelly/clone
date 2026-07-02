@@ -47,13 +47,13 @@ export default function Contact() {
           <div className="lg:col-span-2 flex flex-col gap-8">
             <div className="bg-[#2e4157] text-white p-8 rounded-lg card-shadow border border-white/5 flex flex-col gap-6">
               <div>
-                <span className="text-[10px] uppercase font-bold tracking-widest text-sage block mb-1">Direct Line</span>
-                <h2 className="font-display text-2xl font-bold tracking-wide">KVS Infra Team</h2>
+                <span className="text-[10px] uppercase font-bold tracking-widest text-sage block mb-1">GET IN TOUCH</span>
+                <h2 className="font-display text-2xl font-bold tracking-wide">Connect with the KVS Infra Team</h2>
                 <div className="w-12 h-0.5 bg-sage mt-3"></div>
               </div>
 
               <p className="text-xs text-white/70 leading-relaxed text-justify">
-                Whether you are exploring a plotted project, evaluating a growth corridor, or requesting project details, the KVS Infra team is available to help you make a confident decision.
+                Whether you're exploring plotted developments, agricultural land, strategic investment opportunities, or upcoming projects, our experienced team is here to guide you every step of the way. Reach out for project details, site visits, investment guidance, or any questions you may have.
               </p>
 
               <div className="flex flex-col gap-4 text-xs text-white/80 border-t border-white/10 pt-6 mt-2">
@@ -76,9 +76,9 @@ export default function Contact() {
             <div className="bg-[#fcf9f6] p-8 rounded-lg border border-dark-blue/5 card-shadow flex gap-4 items-start">
               <Clock className="w-6 h-6 text-sage shrink-0 mt-0.5" />
               <div>
-                <h3 className="text-xs uppercase font-bold tracking-wider text-dark-blue mb-1">Response Time</h3>
+                <h3 className="text-xs uppercase font-bold tracking-wider text-dark-blue mb-1">RESPONSE TIME</h3>
                 <p className="text-xs text-dark-blue/60 leading-relaxed text-justify">
-                  We value prompt communication. We review all website requests daily and aim to reply within 24 hours (Eastern Standard Time).
+                  We value prompt and transparent communication. Our team reviews all enquiries daily and typically responds within 24 business hours. For urgent assistance or project visits, our representatives will contact you at the earliest opportunity.
                 </p>
               </div>
             </div>
@@ -98,7 +98,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-5 text-dark-blue">
                 {/* Intro Title */}
                 <div>
-                  <h2 className="font-display text-xl font-bold tracking-wide">Send a Message</h2>
+                  <h2 className="font-display text-xl font-bold tracking-wide">Let's Start the Conversation</h2>
                   <div className="w-10 h-0.5 bg-sage mt-2"></div>
                 </div>
 
@@ -111,7 +111,7 @@ export default function Contact() {
                       required
                       value={formName}
                       onChange={(e) => setFormName(e.target.value)}
-                      placeholder="e.g. John Doe"
+                      placeholder="Enter your full name"
                       className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage"
                     />
                   </div>
@@ -123,7 +123,7 @@ export default function Contact() {
                       type="tel" 
                       value={formPhone}
                       onChange={(e) => setFormPhone(e.target.value)}
-                      placeholder="e.g. +1 246 000 0000"
+                      placeholder="Enter your mobile number"
                       className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage"
                     />
                   </div>
@@ -137,7 +137,7 @@ export default function Contact() {
                     required
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
-                    placeholder="e.g. john@example.com"
+                    placeholder="Enter your email address"
                     className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage"
                   />
                 </div>
@@ -150,7 +150,7 @@ export default function Contact() {
                     rows={6}
                     value={formMsg}
                     onChange={(e) => setFormMsg(e.target.value)}
-                    placeholder="Describe how we can help you..."
+                    placeholder="Tell us about your investment goals, preferred project, site visit request, or any questions you have."
                     className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage resize-none"
                   ></textarea>
                 </div>
@@ -165,7 +165,7 @@ export default function Contact() {
                     className="w-4 h-4 rounded text-sage border-dark-blue/10 focus:ring-sage mt-0.5 cursor-pointer"
                   />
                   <label htmlFor="newsletterConsent" className="text-[10px] text-dark-blue/50 leading-relaxed cursor-pointer select-none">
-                    I consent to receiving project updates and marketing communications from KVS Infra. I can unsubscribe at any time.
+                    I agree to receive project updates, investment opportunities, and communication from KVS Infra. I understand that I can unsubscribe at any time.
                   </label>
                 </div>
 
@@ -175,7 +175,7 @@ export default function Contact() {
                   className="bg-dark-blue text-white hover:bg-sage hover:text-dark-blue font-semibold text-xs uppercase tracking-wider py-3.5 rounded mt-2 transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer shadow"
                 >
                   <Mail className="w-4 h-4" />
-                  <span>Send Message</span>
+                  <span>Talk to Our Investment Advisors</span>
                 </button>
               </form>
             )}

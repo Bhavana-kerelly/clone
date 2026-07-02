@@ -5,8 +5,29 @@ import propertiesData from '../data/properties.json';
 import PropertyCard from '../components/PropertyCard';
 
 export default function AboutBarbados() {
-  const allProperties = Object.values(propertiesData);
-  const featuredProperties = allProperties.slice(0, 3);
+  const investmentCards = [
+    {
+      id: "agri-land",
+      category: "PREMIUM AGRICULTURAL LAND",
+      title: "Organic Farming Estates",
+      image: "https://framerusercontent.com/images/mx0s3eDJVX9CBqHghr0yqggQwqE.jpg",
+      stats: ["Large Scale", "Plantation Ready", "Long-Term Growth"]
+    },
+    {
+      id: "plotted-dev",
+      category: "PLOTTED DEVELOPMENTS",
+      title: "Premium Investment Layouts",
+      image: "https://framerusercontent.com/images/xwVTohGHrB5SqEPyPY0FP0rK90.jpg",
+      stats: ["DTCP/RERA Ready", "High Appreciation", "Infrastructure Ready"]
+    },
+    {
+      id: "strategic-land",
+      category: "FUTURE GROWTH CORRIDORS",
+      title: "Strategic Land Banking",
+      image: "https://framerusercontent.com/images/aFfytqBXE4Ij15DDnKo79GQdbss.jpg",
+      stats: ["Metro Expansion", "Institutional Grade", "Future Ready"]
+    }
+  ];
 
   useEffect(() => {
     document.title = "KVS Infra Business Model | Growth Strategy";
@@ -172,10 +193,10 @@ export default function AboutBarbados() {
             </div>
             <motion.div variants={simpleFadeUp} className="w-16 h-[1px] bg-[#424245]" />
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              KVS Infra focuses on land parcels with strong location potential and scalable development viability. Our strategy combines thorough due diligence, clear planning, and execution discipline to unlock value step by step.
+              KVS Infra identifies and develops strategically located land with strong appreciation potential and long-term investment value. Every acquisition is backed by market research, legal due diligence, and a disciplined approach to ensure sustainable growth for investors and communities alike.
             </motion.p>
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              The company’s growth path is shaped by project quality, transparent processes, and strong relationships with buyers, landowners, and partners. That disciplined approach allows KVS Infra to expand responsibly while preserving long-term value.
+              Our focus extends beyond land ownership—we create opportunities. Through thoughtful planning, transparent execution, and future-ready development, we transform raw land into valuable assets that support residential, commercial, and institutional growth.
             </motion.p>
           </motion.div>
           
@@ -227,10 +248,10 @@ export default function AboutBarbados() {
             </div>
             <motion.div variants={simpleFadeUp} className="w-16 h-[1px] bg-[#424245]" />
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              Every layout is designed to balance usability, access, and long-term appeal. Internal roads, drainage, open areas, and utility planning are treated as core value drivers rather than afterthoughts.
+              Every layout is designed with functionality, accessibility, and long-term value at its core. Wide internal roads, efficient drainage systems, green open spaces, and well-planned utility corridors ensure every development meets modern infrastructure standards.
             </motion.p>
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              Our planning approach supports future resale credibility, community appeal, and practical living standards. That is what turns a parcel of land into a dependable real estate asset.
+              Our planning philosophy prioritizes livability and investment security. By integrating thoughtful design with regulatory compliance, we create layouts that enhance community appeal while maximizing the long-term potential of every property.
             </motion.p>
           </motion.div>
         </div>
@@ -263,10 +284,10 @@ export default function AboutBarbados() {
             </div>
             <motion.div variants={simpleFadeUp} className="w-16 h-[1px] bg-[#424245]" />
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              Barbados offers a vast range of pursuits for all tastes. Play a round on world-class golf courses at Apes Hill or Sandy Lane, designed for challenge and beauty. For equestrian lovers, afternoon polo matches deliver thrilling spectacles. Head over to the Garrison Racecourse which showcases premier horseracing events that captivate and enthuse.
+              Modern communities are built around more than just infrastructure. KVS Infra incorporates landscaped open spaces, recreational zones, and community-focused amenities that promote healthier, more connected lifestyles for residents and families.
             </motion.p>
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              Luxury cruises on our glittering sea reveal secluded coves and stunning coral reefs, perfect for those who appreciate serene exploration. Meanwhile, fine dining establishments serve gourmet cuisine infused with local flavors, presenting unforgettable culinary experiences. You’ll never be short of things to do. The island offers a wealth of experiences to indulge in, ensuring each moment is beautiful.
+              From green parks and walking pathways to thoughtfully allocated social spaces, every project is planned to create environments where people can live, interact, and thrive while enjoying lasting quality of life.
             </motion.p>
           </motion.div>
           
@@ -307,37 +328,37 @@ export default function AboutBarbados() {
           >
             <div className="overflow-hidden">
               <motion.span variants={maskedTextReveal} className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#86868b] block">
-                The Endless Summer
+                FUTURE-READY DEVELOPMENT
               </motion.span>
             </div>
             <div className="overflow-hidden py-1">
               <motion.h2 variants={maskedTextReveal} className="text-3xl sm:text-5xl font-semibold text-white tracking-tight leading-none">
-                Climate &amp; Weather
+                Sustainable Growth
               </motion.h2>
             </div>
             <motion.div variants={simpleFadeUp} className="w-16 h-[1px] bg-[#424245]" />
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              Barbados is a year-round tropical paradise with warm, sunny weather tempered by gentle trade winds. The average temperature ranges between 27°-30°C/80°-86°F. Equally, the ocean remains invitingly warm throughout the year, with temperatures ranging from 26-29°C (79-84°F).
+              KVS Infra embraces responsible development practices that balance economic progress with environmental stewardship. Every project is planned with efficient resource utilization, sustainable infrastructure, and long-term community value in mind.
             </motion.p>
             <motion.p variants={simpleFadeUp} className="text-sm sm:text-base text-[#86868b] leading-relaxed text-justify">
-              From December to May, the island enjoys a dry season of clear skies and cool breezes, while the wetter summer season brings brief, refreshing showers that keep the lush landscapes vibrant. The idyllic climate ensures that you can bask in the sun on pristine beaches or indulge in outdoor leisure pursuits at any time of year.
+              By preserving natural landscapes where possible and integrating modern infrastructure with thoughtful planning, we create developments that remain resilient, valuable, and beneficial for future generations.
             </motion.p>
           </motion.div>
         </div>
       </section>
 
 
-      {/* 6. FEATURED RESIDENCES BLOCK: IMMERSIVE FINALE */}
+      {/* 6. FEATURED INVESTMENT BLOCK: IMMERSIVE FINALE */}
       <section className="py-40 bg-black z-50 relative border-t border-[#161617]">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           
           <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-24 border-b border-[#222] pb-10">
             <div className="space-y-3">
               <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#86868b] block">
-                Local Properties
+                CURATED LAND PORTFOLIO
               </span>
               <h2 className="text-4xl sm:text-6xl font-semibold text-white tracking-tight leading-none">
-                Featured Island Residences
+                Featured Investment Opportunities
               </h2>
             </div>
             <motion.div 
@@ -345,7 +366,7 @@ export default function AboutBarbados() {
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
               className="flex items-center gap-2 text-sm text-[#0071e3] font-medium cursor-pointer mt-6 md:mt-0 group"
             >
-              <span className="tracking-tight text-base">View All Curated Portfolios</span>
+              <span className="tracking-tight text-base">Explore All Projects</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </motion.div>
           </div>
@@ -357,14 +378,39 @@ export default function AboutBarbados() {
             variants={containerReveal}
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
           >
-            {featuredProperties.map((p, index) => (
+            {investmentCards.map((card, index) => (
               <motion.div 
-                key={p.id || index}
+                key={card.id || index}
                 variants={simpleFadeUp}
                 whileHover={{ y: -10 }}
-                className="bg-[#1c1c1e] rounded-3xl p-3 border border-[#2d2d30] transition-all duration-500 hover:border-[#444] shadow-2xl"
+                className="bg-[#1c1c1e] rounded-[28px] overflow-hidden border border-[#2d2d30] transition-all duration-500 hover:border-[#444] shadow-[0_20px_50px_rgba(0,0,0,0.4)] group w-full"
               >
-                <PropertyCard property={p} />
+                <div className="block w-full h-full relative">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-black/40 border-b border-[#2d2d30]">
+                    <img 
+                      src={card.image} 
+                      alt={card.title} 
+                      loading="lazy"
+                      className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 filter brightness-[0.9]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent opacity-85 z-10" />
+                  </div>
+                  <div className="p-6 relative z-30">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#0071e3] block mb-2">
+                      {card.category}
+                    </span>
+                    <h3 className="text-lg text-white font-medium tracking-tight transition-colors duration-300 line-clamp-1 mb-5">
+                      {card.title}
+                    </h3>
+                    <div className="grid grid-cols-3 gap-3 border-t border-[#2d2d30] pt-4 text-[#86868b]">
+                      {card.stats.map((stat, i) => (
+                        <div key={i} className="flex flex-col">
+                          <span className="text-xs font-semibold text-white tracking-tight leading-tight">{stat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>
