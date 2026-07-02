@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@200..700&family=Archivo:wght@400..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:wght@400;600;700&family=Onest:wght@400;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-dark-blue: #2e4157;
+  --color-muted-blue: #2e4157d9;
+  --color-cream: #f4efeb;
+  --color-sage: #bed9d8;
+  --color-muted-white: #ffffffb3;
+  --color-transparent-white: #fff3;
+  
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", "Inter", sans-serif;
+  --font-afacad: "Afacad Flux", sans-serif;
+  --font-onest: "Onest", sans-serif;
+  --font-archivo: "Archivo", sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f4efeb;
+}
+::-webkit-scrollbar-thumb {
+  background: #2e415750;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2e415780;
+}
+
+/* Custom Selection */
+::selection {
+  background-color: #bed9d8;
+  color: #2e4157;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #f4efeb;
+  color: #2e4157;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Smooth glass effect helper */
+.glass-nav {
+  background-color: rgba(244, 239, 235, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.glass-nav-dark {
+  background-color: rgba(46, 65, 87, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.card-shadow {
+  box-shadow: 0px 4px 20px rgba(46, 65, 87, 0.05);
+}
+
+.transition-all-300 {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
