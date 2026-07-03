@@ -27,144 +27,191 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-dark-blue min-h-screen pt-28 pb-24 text-white">
+    <div className="bg-[#1e2a3a] min-h-screen pt-32 pb-24 text-white font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Page Header */}
         <div className="text-center mb-16 flex flex-col items-center">
-          <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-sage mb-2">
-            Get In Touch
+          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-3">
+            GET IN TOUCH
           </span>
-          <h1 className="font-display text-3xl md:text-5xl font-bold tracking-wide text-dark-blue mb-4">
-            Contact KVS Infra.
-          </h1>
-          <div className="w-16 h-0.5 bg-sage"></div>
+          <div className="w-12 h-[1px] bg-sage/60"></div>
         </div>
 
         {/* Contact Grid layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
           
-          {/* LEFT SECTION: CONTACT INFO CARD */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
-            <div className="bg-[#2e4157] text-white p-8 rounded-lg card-shadow border border-white/5 flex flex-col gap-6">
-              <div>
-                <span className="text-[10px] uppercase font-bold tracking-widest text-sage block mb-1">GET IN TOUCH</span>
-                <h2 className="font-display text-2xl font-bold tracking-wide">Connect with the KVS Infra Team</h2>
-                <div className="w-12 h-0.5 bg-sage mt-3"></div>
+          {/* LEFT SECTION: CONTACT INFO CARDS */}
+          <div className="lg:col-span-3 flex flex-col gap-6">
+            
+            {/* Primary Details Card */}
+            <div className="relative bg-[#132238] border border-white/[0.06] p-10 rounded-[2rem] shadow-2xl flex flex-col gap-8 overflow-hidden flex-1 justify-between">
+              
+              {/* Architectural Overlay Fade */}
+              <div className="absolute right-0 top-0 bottom-0 w-[55%] opacity-65 pointer-events-none">
+                <img 
+                  src="/images/kvs/project-5.jpg" 
+                  alt="" 
+                  className="w-full h-full object-cover object-left"
+                />
+                <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#132238] to-transparent"></div>
               </div>
 
-              <p className="text-xs text-white/70 leading-relaxed text-justify">
-                Whether you're exploring residential projects, plotted developments, agricultural land, strategic investment opportunities, or upcoming projects, our experienced team is here to guide you every step of the way. Reach out for project details, site visits, investment guidance, or any questions you may have.
-              </p>
+              {/* Header Text */}
+              <div className="relative z-10">
+                <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-[#c4a468] block mb-2">GET IN TOUCH</span>
+                <h2 className="font-display text-3xl font-light leading-tight">
+                  Connect with the <br />
+                  <span className="font-serif italic font-normal text-[#c4a468]">KVS Infra</span> Team
+                </h2>
+                <div className="w-12 h-[1px] bg-[#c4a468]/50 mt-4"></div>
+              </div>
 
-              <div className="flex flex-col gap-4 text-xs text-white/80 border-t border-white/10 pt-6 mt-2">
-                <a href="mailto:info@kvsinfra.com" className="flex items-center gap-3 hover:text-sage transition-colors">
-                  <Mail className="w-4 h-4 text-sage" />
-                  <span>info@kvsinfra.com</span>
+              {/* Main Intro */}
+              <div className="relative z-10 flex flex-col gap-4 text-xs text-white/70 leading-relaxed font-light">
+                <p>
+                  Whether you're exploring residential projects, plotted developments, agricultural land, strategic investment opportunities, or upcoming projects, our experienced team is here to guide you every step of the way.
+                </p>
+                <p>
+                  Reach out for project details, site visits, investment guidance, or any questions you may have.
+                </p>
+              </div>
+
+              {/* Contact Icons Column */}
+              <div className="relative z-10 flex flex-col gap-6 border-t border-white/[0.08] pt-8">
+                
+                {/* Email */}
+                <a href="mailto:info@kvsinfra.com" className="flex items-center gap-4 group text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">EMAIL</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">info@kvsinfra.com</span>
+                  </div>
                 </a>
-                <a href="tel:+919876543210" className="flex items-center gap-3 hover:text-sage transition-colors">
-                  <Phone className="w-4 h-4 text-sage" />
-                  <span>+91 98765 43210</span>
+
+                {/* Phone */}
+                <a href="tel:+919876543210" className="flex items-center gap-4 group text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">PHONE</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 98765 43210</span>
+                  </div>
                 </a>
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-sage shrink-0 mt-0.5" />
-                  <span>Headquarters: AeroGalaxy, Hyderabad, India<br /><span className="text-[10px] opacity-60">Branches: Tirupati, Bengaluru, Chennai</span></span>
+
+                {/* Address / Headquarters */}
+                <div className="flex items-start gap-4 text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage shrink-0">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">HEADQUARTERS</span>
+                    <span className="text-xs font-medium text-white/90 block">AeroGalaxy, Hyderabad, India</span>
+                    <span className="text-[10px] text-white/40 font-light mt-0.5 block">Branches: Tirupati, Bengaluru, Chennai</span>
+                  </div>
                 </div>
+
               </div>
             </div>
 
-            {/* Office hours card */}
-            <div className="bg-[#fcf9f6] p-8 rounded-lg border border-dark-blue/5 card-shadow flex gap-4 items-start">
-              <Clock className="w-6 h-6 text-sage shrink-0 mt-0.5" />
-              <div>
-                <h3 className="text-xs uppercase font-bold tracking-wider text-dark-blue mb-1">RESPONSE TIME</h3>
-                <p className="text-xs text-dark-blue/60 leading-relaxed text-justify">
+            {/* Bottom Response Time Card */}
+            <div className="bg-[#132238]/60 border border-white/[0.06] p-8 rounded-[1.5rem] shadow-xl flex gap-5 items-start">
+              <div className="w-11 h-11 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage shrink-0 mt-0.5">
+                <Clock className="w-4 h-4" />
+              </div>
+              <div className="text-left">
+                <h3 className="text-[10px] uppercase font-bold tracking-widest text-white/40 mb-1">RESPONSE TIME</h3>
+                <p className="text-xs text-white/70 leading-relaxed font-light">
                   We value prompt and transparent communication. Our team reviews all enquiries daily and typically responds within 24 business hours. For urgent assistance or project visits, our representatives will contact you at the earliest opportunity.
                 </p>
               </div>
             </div>
+
           </div>
 
-          {/* RIGHT SECTION: CONTACT FORM CARD */}
-          <div className="lg:col-span-3 bg-[#fcf9f6] p-8 rounded-lg border border-dark-blue/5 card-shadow">
+          {/* RIGHT SECTION: WHITE CONTACT FORM CARD */}
+          <div className="lg:col-span-2 bg-white p-12 rounded-[2rem] shadow-2xl flex flex-col justify-center">
             {formSent ? (
-              <div className="py-16 text-center flex flex-col items-center gap-4 animate-fade-in">
-                <CheckCircle className="w-16 h-16 text-sage" />
-                <h2 className="font-display text-2xl font-bold text-dark-blue">Message Sent Successfully</h2>
-                <p className="text-xs sm:text-sm text-dark-blue/60 leading-relaxed max-w-sm">
+              <div className="py-24 text-center flex flex-col items-center gap-5 animate-[apple-scale_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+                <CheckCircle className="w-20 h-20 text-sage" />
+                <h2 className="font-serif text-3xl font-normal text-dark-blue">Message Sent Successfully</h2>
+                <p className="text-xs sm:text-sm text-dark-blue/60 leading-relaxed max-w-sm font-light">
                   Thank you for contacting KVS Infra. Our team will get back to you shortly regarding your enquiry.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5 text-dark-blue">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-6 text-dark-blue">
                 {/* Intro Title */}
-                <div>
-                  <h2 className="font-display text-xl font-bold tracking-wide">Let's Start the Conversation</h2>
-                  <div className="w-10 h-0.5 bg-sage mt-2"></div>
+                <div className="text-left mb-2">
+                  <h2 className="font-serif text-3xl font-normal text-[#132238] tracking-tight">Let's Start the Conversation</h2>
+                  <div className="w-12 h-[1px] bg-sage mt-4"></div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-5">
                   {/* Name */}
                   <div className="flex flex-col text-left">
-                    <label className="text-[9px] uppercase font-bold tracking-wider text-dark-blue/50 mb-2">Full Name</label>
+                    <label className="text-[9px] uppercase font-bold tracking-wider text-[#132238]/60 mb-2">Full Name</label>
                     <input 
                       type="text" 
                       required
                       value={formName}
                       onChange={(e) => setFormName(e.target.value)}
                       placeholder="Enter your full name"
-                      className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage"
+                      className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-5 py-4 text-xs text-dark-blue placeholder-slate-400 focus:outline-none focus:border-sage focus:ring-1 focus:ring-sage focus:bg-white transition-all duration-300"
                     />
                   </div>
 
                   {/* Phone */}
                   <div className="flex flex-col text-left">
-                    <label className="text-[9px] uppercase font-bold tracking-wider text-dark-blue/50 mb-2">Phone Number</label>
+                    <label className="text-[9px] uppercase font-bold tracking-wider text-[#132238]/60 mb-2">Phone Number</label>
                     <input 
                       type="tel" 
                       value={formPhone}
                       onChange={(e) => setFormPhone(e.target.value)}
                       placeholder="Enter your mobile number"
-                      className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage"
+                      className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-5 py-4 text-xs text-dark-blue placeholder-slate-400 focus:outline-none focus:border-sage focus:ring-1 focus:ring-sage focus:bg-white transition-all duration-300"
                     />
                   </div>
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col text-left">
-                  <label className="text-[9px] uppercase font-bold tracking-wider text-dark-blue/50 mb-2">Email Address</label>
+                  <label className="text-[9px] uppercase font-bold tracking-wider text-[#132238]/60 mb-2">Email Address</label>
                   <input 
                     type="email" 
                     required
                     value={formEmail}
                     onChange={(e) => setFormEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage"
+                    className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-5 py-4 text-xs text-dark-blue placeholder-slate-400 focus:outline-none focus:border-sage focus:ring-1 focus:ring-sage focus:bg-white transition-all duration-300"
                   />
                 </div>
 
                 {/* Message */}
                 <div className="flex flex-col text-left">
-                  <label className="text-[9px] uppercase font-bold tracking-wider text-dark-blue/50 mb-2">Message Details</label>
+                  <label className="text-[9px] uppercase font-bold tracking-wider text-[#132238]/60 mb-2">Message Details</label>
                   <textarea 
                     required
-                    rows={6}
+                    rows={5}
                     value={formMsg}
                     onChange={(e) => setFormMsg(e.target.value)}
                     placeholder="Tell us about your investment goals, preferred project, site visit request, or any questions you have."
-                    className="w-full bg-white border border-dark-blue/10 rounded px-4 py-2.5 text-xs focus:outline-none focus:ring-1 focus:ring-sage resize-none"
+                    className="w-full bg-[#f8fafc] border border-[#e2e8f0] rounded-xl px-5 py-4 text-xs text-dark-blue placeholder-slate-400 focus:outline-none focus:border-sage focus:ring-1 focus:ring-sage focus:bg-white transition-all duration-300 resize-none"
                   ></textarea>
                 </div>
 
                 {/* Newsletter Consent check */}
-                <div className="flex gap-3 items-start mt-2">
+                <div className="flex gap-3 items-start mt-1 text-left">
                   <input 
                     type="checkbox"
                     id="newsletterConsent"
                     checked={newsletterOptIn}
                     onChange={(e) => setNewsletterOptIn(e.target.checked)}
-                    className="w-4 h-4 rounded text-sage border-dark-blue/10 focus:ring-sage mt-0.5 cursor-pointer"
+                    className="w-4 h-4 rounded text-[#132238] border-[#e2e8f0] focus:ring-[#132238] mt-0.5 cursor-pointer accent-[#132238]"
                   />
-                  <label htmlFor="newsletterConsent" className="text-[10px] text-dark-blue/50 leading-relaxed cursor-pointer select-none">
+                  <label htmlFor="newsletterConsent" className="text-[10px] text-[#132238]/70 leading-relaxed cursor-pointer select-none">
                     I agree to receive project updates, investment opportunities, and communication from KVS Infra. I understand that I can unsubscribe at any time.
                   </label>
                 </div>
@@ -172,9 +219,9 @@ export default function Contact() {
                 {/* Submit button */}
                 <button 
                   type="submit"
-                  className="bg-dark-blue text-white hover:bg-sage hover:text-dark-blue font-semibold text-xs uppercase tracking-wider py-3.5 rounded mt-2 transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer shadow"
+                  className="bg-[#1e2a3a] hover:bg-[#132238] text-white font-semibold text-[10px] uppercase tracking-widest py-4.5 rounded-xl mt-4 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-lg active:scale-[0.98]"
                 >
-                  <Mail className="w-4 h-4" />
+                  <Mail className="w-4 h-4 text-sage" />
                   <span>Talk to Our Investment Advisors</span>
                 </button>
               </form>
