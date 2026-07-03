@@ -234,8 +234,9 @@ export default function SearchProperty() {
                 <option value="" className="bg-[#131c2e]">Any Region</option>
                 <option value="Tirupati" className="bg-[#131c2e]">Tirupati</option>
                 <option value="Chandragiri" className="bg-[#131c2e]">Chandragiri</option>
-                <option value="Noida" className="bg-[#131c2e]">Noida</option>
-                <option value="Gurugram" className="bg-[#131c2e]">Gurugram</option>
+                <option value="Hyderabad" className="bg-[#131c2e]">Hyderabad</option>
+                <option value="Chennai" className="bg-[#131c2e]">Chennai</option>
+                <option value="Bangalore" className="bg-[#131c2e]">Bangalore</option>
               </select>
             </div>
 

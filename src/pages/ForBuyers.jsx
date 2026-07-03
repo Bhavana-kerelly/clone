@@ -69,7 +69,7 @@ export default function ForBuyers() {
         <div className="absolute inset-0 z-0">
           <img 
             ref={heroImgRef}
-            src="https://framerusercontent.com/images/L6RthZY2p5GiyPwLyRpf5Iuohs.jpg" 
+            src="/images/kvs/growth-hero.jpg" 
             alt="KVS Infra growth corridor and plotted development backdrop" 
             className="w-full h-full object-cover opacity-25"
           />

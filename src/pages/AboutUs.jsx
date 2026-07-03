@@ -126,11 +126,11 @@ export default function AboutUs() {
   }, []);
 
   const testimonials = [
-    { text: "Dear Sean,…I want to thank you from the bottom of my heart for all your time, patience, good advice, and company, you really made a dreary task quite an enjoyable experience.", author: "MR" },
-    { text: "Sean...I want to thank you personally and on behalf of my family for all you have done for us. You have really been perfect for us in helping our transition into a property in the UK.", author: "CB" },
-    { text: "Thank you Sean - your integrity and professionalism have assisted greatly in securing the sale.", author: "KC" },
-    { text: "Thank you Sean. F and I could not have hoped to find a property consultant that could have assisted us more with this whole process.", author: "DM" },
-    { text: "...All of this happened only because of the professionality, seriousness and honest approach Sean has manifested. He has always effortlessly gone into supporting us with info and facts and delivering on every promise made.", author: "DB" }
+    { text: "KVS Infra made our land investment simple and transparent. The team's integrity and professional advice made the process an enjoyable experience.", author: "M.R." },
+    { text: "I want to thank KVS Infra personally for helping my family secure our first residential plot in Hyderabad. The layout and infrastructure are perfect.", author: "C.B." },
+    { text: "Thank you to the KVS team—your legal transparency and professionalism assisted greatly in our plot registration.", author: "K.C." },
+    { text: "We could not have hoped to find a better real estate partner. They supported us at every stage of buying our villa plots.", author: "D.M." },
+    { text: "We invested in KVS Green County and the appreciation has been remarkable. Their honest approach and prompt delivery exceeded our expectations.", author: "D.B." }
   ];
 
   // Double up listings pool internally to build seamless rolling horizon parameters
@@ -144,7 +144,7 @@ export default function AboutUs() {
         <div className="absolute inset-0 z-0">
           <img 
             ref={heroImgRef}
-            src="https://framerusercontent.com/images/sp6xPnKADyG1xIhRbtH9H9syU4.jpg" 
+            src="/images/kvs/about-hero.jpg" 
             alt="KVS Infra development site and infrastructure planning" 
             className="w-full h-full object-cover will-change-transform"
           />
@@ -179,8 +179,8 @@ export default function AboutUs() {
             
             {/* Apple Luxury Frosted Glassmorphism Banner Card */}
             <div className="absolute bottom-6 left-6 right-6 bg-white/40 backdrop-blur-xl border border-white/30 p-6 rounded-xl text-white text-left shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-              <span className="text-[9px] uppercase tracking-[0.2em] text-[#c4a468] block font-bold mb-1">Leadership / Execution</span>
-              <span className="font-serif text-2xl font-normal text-dark-blue">KVS Infra Team</span>
+              <span className="text-[9px] uppercase tracking-[0.2em] text-[#c4a468] block font-bold mb-1">Managing Director</span>
+              <span className="font-serif text-2xl font-normal text-dark-blue">Chevireddy Mohith Reddy</span>
             </div>
           </div>
         </div>
@@ -188,15 +188,15 @@ export default function AboutUs() {
         {/* Profile Details Container Frame */}
         <div ref={profileTextRef} className="flex flex-col gap-6 text-left will-change-transform">
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#c4a468]">
-            Leadership &amp; Execution
+            Leadership
           </span>
           <h2 className="font-display text-4xl font-light tracking-tight leading-none">
-            <span className="font-serif italic font-normal text-[#c4a468]">Our Vision</span>
+            Managing Director: <span className="font-serif italic font-normal text-[#c4a468] block sm:inline">Chevireddy Mohith Reddy</span>
           </h2>
           <div className="w-12 h-[1px] bg-[#c4a468] mb-2"></div>
           
           <p className="text-sm sm:text-base text-white/80 leading-relaxed font-light text-justify">
-            We envision shaping the future of land by creating thoughtfully planned developments that combine strategic insight, uncompromising integrity, and sustainable growth—delivering lasting value for investors, communities, and generations to come.
+            Under the vision of our Managing Director, Chevireddy Mohith Reddy, KVS Infra has established a robust customer base, successfully acquiring, developing, and selling over 1,000+ acres of premium agricultural and non-agricultural land to multinational corporations (MNCs) and private investors. Starting from Tirupati, we are expanding our horizons and building our footprints across Hyderabad, Chennai, and Bangalore with high-value residential and plotted projects.
           </p>
 
           {/* Premium Glassmorphism Credentials Panel Grid */}

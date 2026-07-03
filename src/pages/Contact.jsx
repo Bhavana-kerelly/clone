@@ -53,7 +53,7 @@ export default function Contact() {
               </div>
 
               <p className="text-xs text-white/70 leading-relaxed text-justify">
-                Whether you're exploring plotted developments, agricultural land, strategic investment opportunities, or upcoming projects, our experienced team is here to guide you every step of the way. Reach out for project details, site visits, investment guidance, or any questions you may have.
+                Whether you're exploring residential projects, plotted developments, agricultural land, strategic investment opportunities, or upcoming projects, our experienced team is here to guide you every step of the way. Reach out for project details, site visits, investment guidance, or any questions you may have.
               </p>
 
               <div className="flex flex-col gap-4 text-xs text-white/80 border-t border-white/10 pt-6 mt-2">
@@ -67,7 +67,7 @@ export default function Contact() {
                 </a>
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 text-sage shrink-0 mt-0.5" />
-                  <span>Tirupati, Andhra Pradesh, India</span>
+                  <span>Headquarters: AeroGalaxy, Hyderabad, India<br /><span className="text-[10px] opacity-60">Branches: Tirupati, Bengaluru, Chennai</span></span>
                 </div>
               </div>
             </div>

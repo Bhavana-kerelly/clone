@@ -144,7 +144,7 @@ export default function Footer() {
               <div>
                 <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">STRATEGIC GROWTH CORRIDORS</h5>
                 <p className="text-sm text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors">
-                  Expanding across Tirupati, Chandragiri, and Delhi NCR with carefully selected locations for long-term appreciation.
+                  Expanding across Tirupati, Hyderabad, Chennai, and Bangalore with carefully selected locations for long-term appreciation.
                 </p>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-white/40 leading-relaxed font-light mb-8 max-w-sm">
-              KVS Infra is a trusted real estate development company specializing in strategic land banking, plotted developments, and investment-focused communities. We create projects designed for sustainable growth, transparent ownership, and long-term value creation.
+              KVS Infra is a trusted real estate development company specializing in residential projects, strategic land banking, plotted developments, and investment-focused communities. We create projects designed for sustainable growth, transparent ownership, and long-term value creation.
             </p>
 
             <div className="flex items-center gap-4 mb-10">
@@ -226,7 +226,7 @@ export default function Footer() {
 
               <div className="flex items-center gap-3 text-white/60">
                 <MapPin className="w-4 h-4 opacity-40 text-sage" />
-                <span className="font-light">Tirupati, Andhra Pradesh, India</span>
+                <span className="font-light">Headquarters: AeroGalaxy, Hyderabad, India<br /><span className="text-xs text-white/30">Branches: Tirupati, Bengaluru, Chennai</span></span>
               </div>
             </div>
           </div>

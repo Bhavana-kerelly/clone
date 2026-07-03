@@ -10,21 +10,21 @@ export default function AboutBarbados() {
       id: "agri-land",
       category: "PREMIUM AGRICULTURAL LAND",
       title: "Organic Farming Estates",
-      image: "https://framerusercontent.com/images/mx0s3eDJVX9CBqHghr0yqggQwqE.jpg",
+      image: "/images/kvs/invest-1.jpg",
       stats: ["Large Scale", "Plantation Ready", "Long-Term Growth"]
     },
     {
       id: "plotted-dev",
       category: "PLOTTED DEVELOPMENTS",
       title: "Premium Investment Layouts",
-      image: "https://framerusercontent.com/images/xwVTohGHrB5SqEPyPY0FP0rK90.jpg",
+      image: "/images/kvs/invest-2.jpg",
       stats: ["DTCP/RERA Ready", "High Appreciation", "Infrastructure Ready"]
     },
     {
       id: "strategic-land",
       category: "FUTURE GROWTH CORRIDORS",
       title: "Strategic Land Banking",
-      image: "https://framerusercontent.com/images/aFfytqBXE4Ij15DDnKo79GQdbss.jpg",
+      image: "/images/kvs/invest-3.jpeg",
       stats: ["Metro Expansion", "Institutional Grade", "Future Ready"]
     }
   ];
@@ -117,7 +117,7 @@ export default function AboutBarbados() {
         >
           <motion.div style={{ scale: heroImageScale, opacity: heroOpacity }} className="absolute inset-0 z-0">
             <img 
-              src="https://framerusercontent.com/images/tYliNzBTUm5FERQkCY5A9aa9kw.jpg" 
+              src="/images/kvs/business-hero.jpg" 
               alt="KVS Infra plotted development and master plan" 
               className="w-full h-full object-cover opacity-50"
             />
@@ -203,8 +203,8 @@ export default function AboutBarbados() {
           <div className="lg:col-span-6 rounded-3xl overflow-hidden aspect-video bg-[#111] border border-[#222] relative shadow-2xl group">
             <motion.div style={{ y: cultureImageY }} className="absolute -inset-y-24 inset-x-0 w-full h-[calc(100%+192px)]">
               <img 
-                src="https://framerusercontent.com/images/pfEJJ9QrAn3EpSoq0mBLAxo0.jpg" 
-                alt="An old heritage building with a clock tower in Barbados" 
+                src="/images/kvs/land-plots.jpg" 
+                alt="KVS Infra plotted land development aerial view" 
                 className="w-full h-full object-cover filter brightness-95 group-hover:scale-[1.03] transition-transform duration-700 ease-out"
               />
             </motion.div>
@@ -223,8 +223,8 @@ export default function AboutBarbados() {
           <div className="order-2 lg:order-1 lg:col-span-7 rounded-3xl overflow-hidden aspect-video bg-black border border-[#333] shadow-2xl relative">
             <motion.img 
               style={{ scale: archImageScale }}
-              src="https://framerusercontent.com/images/B7wY4tIh88yCyhIJKWO4rBfeBBo.jpg" 
-              alt="Luxury Caribbean Architecture in Barbados" 
+              src="/images/kvs/layout-design.jpg" 
+              alt="KVS Infra planned community aerial view with roads and villas" 
               className="w-full h-full object-cover"
             />
           </div>
@@ -294,8 +294,8 @@ export default function AboutBarbados() {
           <div className="lg:col-span-6 rounded-3xl overflow-hidden aspect-video bg-[#111] border border-[#222] relative shadow-2xl group">
             <motion.div style={{ y: lifestyleImageY }} className="absolute -inset-y-24 inset-x-0 w-full h-[calc(100%+192px)]">
               <img 
-                src="https://framerusercontent.com/images/yZOh20dxEg3fI9hFlBxGRkK6dl8.jpg" 
-                alt="Golf course at Apes Hill Resort Barbados" 
+                src="/images/kvs/Lifestyle.jpg" 
+                alt="KVS Infra community park with playground, running track and pool" 
                 className="w-full h-full object-cover filter brightness-95 group-hover:scale-[1.03] transition-transform duration-700 ease-out"
               />
             </motion.div>
@@ -313,8 +313,8 @@ export default function AboutBarbados() {
           <div className="order-2 lg:order-1 lg:col-span-7 rounded-3xl overflow-hidden aspect-video bg-black border border-[#333] shadow-2xl relative">
             <motion.img 
               style={{ scale: climateImageScale }}
-              src="https://framerusercontent.com/images/KKQzHbC7qQPF6W0SeLLgQ9ok8E.jpg" 
-              alt="Beach with palm trees in Barbados" 
+              src="/images/kvs/sustainable.jpg" 
+              alt="KVS Infra green township with lake and modern buildings" 
               className="w-full h-full object-cover"
             />
           </div>

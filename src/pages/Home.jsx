@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, ChevronLeft, ChevronRight, Check, ArrowRight, Compass, Home as HomeIcon, ShieldCheck } from 'lucide-react';
+import { Search, ChevronLeft, ChevronRight, Check, ArrowRight, Compass, Home as HomeIcon, ShieldCheck, Building2, TrendingUp, Users } from 'lucide-react';
 import propertiesData from '../data/properties.json';
 import PropertyCard from '../components/PropertyCard';
 
@@ -32,7 +32,7 @@ export default function Home() {
     { text: "KVS Infra made the entire plot booking process transparent and simple. From site visit to registration, every step was handled with real professionalism.", author: "R.S." },
     { text: "We invested in KVS Meadows two years ago and the appreciation has been remarkable. The layout, roads, and drainage were exactly as promised.", author: "V.K." },
     { text: "The team's honesty about titles and documentation gave us complete confidence to buy our first plot in Tirupati.", author: "P.N." },
-    { text: "From the HDFC Bank loan tie-up to the final handover, KVS Infra supported us at every stage of buying our villa.", author: "A.R." },
+    { text: "From the initial consultation to the final registration, KVS Infra supported us at every stage of buying our villa.", author: "A.R." },
     { text: "KVS Infra's Chandragiri layout is beautifully planned. The open spaces and infrastructure quality are far above what we expected for the price.", author: "S.M." }
   ];
 
@@ -62,9 +62,12 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-28 pb-20 overflow-hidden">
         {/* Apple Atmospheric Space Backing */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/kvs/hero.jpg" 
-            alt="KVS Infra plotted layout aerial view" 
+          <video 
+            src="/hero-video.mp4" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
             className="w-full h-full object-cover scale-100 animate-[apple-scale_30s_cubic-bezier(0.25,1,0.5,1)_infinite] opacity-40 filter brightness-90"
           />
           {/* Depth Scrims */}
@@ -89,7 +92,7 @@ export default function Home() {
           </h1>
           
           <p className="text-base sm:text-lg text-white/60 max-w-2xl font-light leading-relaxed mb-16 px-4 opacity-0 animate-[apple-fade-up_1s_0.6s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-            KVS Infra is a real estate development company specializing in strategic land banking, land aggregation, and premium plotted communities. Since 2019, we have been creating long-term value through carefully planned developments, with a growing presence from Tirupati to Delhi NCR.
+            KVS Infra is a real estate development company specializing in residential projects, strategic land banking, land aggregation, and premium plotted communities. Since 2019, we have been creating long-term value through carefully planned developments, with a footprint expanding from Tirupati to Hyderabad, Chennai, and Bangalore.
           </p>
 
         </div>
@@ -99,20 +102,50 @@ export default function Home() {
 <section className="py-24 px-4 sm:px-6 lg:px-12 max-w-[1440px] mx-auto relative z-20 overflow-hidden">
   
   {/* Header: Cinematic Reveal with Text Mask Tracking */}
-  <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 border-b border-white/[0.05] pb-16 relative group/header">
-    <div className="max-w-2xl text-left">
-      <div className="overflow-hidden mb-3">
-        <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-sage block translate-y-full animate-[apple-slide-up_0.8s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-          Structured Opportunities
-        </span>
-      </div>
-      <h2 className="text-6xl md:text-8xl font-extralight tracking-tight text-white mb-0 leading-tight">
-        Land Becomes <span className="font-serif italic font-normal text-transparent bg-clip-text bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] animate-[shimmer-text_8s_linear_infinite] font-cursive">Legacy</span>
+  <div className="flex flex-col lg:flex-row justify-between mb-16 gap-12 relative group/header">
+    <div className="flex-1 max-w-xl text-left flex flex-col justify-center">
+      <h2 className="text-6xl md:text-[5.5rem] font-light tracking-tight text-white mb-0 leading-[1.1]">
+        Land Becomes
       </h2>
+      <h2 className="text-6xl md:text-[6.5rem] font-serif italic font-normal text-sage font-cursive mb-8 leading-[1.1]">
+        Legacy
+      </h2>
+      <p className="text-base md:text-lg text-white/80 max-w-md font-light leading-relaxed">
+        We transform strategically located land into planned communities and investment opportunities, delivering <span className="text-sage font-medium">sustainable growth</span> and <span className="text-sage font-medium">lasting value</span> for generations.
+      </p>
     </div>
-    <p className="text-base md:text-lg text-white/40 max-w-md font-light leading-relaxed mt-8 md:mt-0 md:pl-8 border-l-0 md:border-l border-white/10 transition-colors duration-500 group-hover/header:text-white/60">
-      We transform strategically located land into planned communities and investment opportunities, delivering sustainable growth and lasting value for generations.
-    </p>
+
+    <div className="flex-1 w-full lg:max-w-[700px] relative">
+      <div className="relative w-full h-[400px] md:h-[420px] rounded-[1.5rem] overflow-hidden border border-white/[0.05]">
+        <img 
+          src="/images/kvs/hero.jpg" 
+          alt="Legacy Landscape" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0F14] via-[#0D0F14]/60 to-transparent"></div>
+        
+        <div className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 w-[240px] md:w-[260px] bg-[#141414]/60 backdrop-blur-md border border-white/[0.08] rounded-[2rem] flex flex-col">
+          <div className="flex items-center gap-4 px-5 py-6 border-b border-white/[0.08]">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center shrink-0 text-white">
+              <Building2 className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+            </div>
+            <span className="text-sm md:text-[15px] text-white font-light leading-tight">Strategic<br />Locations</span>
+          </div>
+          <div className="flex items-center gap-4 px-5 py-6 border-b border-white/[0.08]">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center shrink-0 text-white">
+              <TrendingUp className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+            </div>
+            <span className="text-sm md:text-[15px] text-white font-light leading-tight">Sustainable<br />Growth</span>
+          </div>
+          <div className="flex items-center gap-4 px-5 py-6">
+            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center shrink-0 text-white">
+              <Users className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
+            </div>
+            <span className="text-sm md:text-[15px] text-white font-light leading-tight">Lasting Value<br />for Generations</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   {/* Fluid Apple Spatial Canvas Grid */}
@@ -221,7 +254,7 @@ export default function Home() {
             {/* Asset Engine */}
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://framerusercontent.com/images/L6RthZY2p5GiyPwLyRpf5Iuohs.jpg" 
+                src="/images/kvs/aerial-1.jpg" 
                 alt="KVS Infra land development corridor in Tirupati" 
                 className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 filter grayscale-[20%]"
               />
@@ -254,7 +287,7 @@ export default function Home() {
             {/* Asset Engine */}
             <div className="absolute inset-0 z-0">
               <img 
-                src="https://framerusercontent.com/images/l6CrVcBPyfR6P0JJBqJ1EMLdw4.jpg" 
+                src="/images/kvs/aerial-2.jpg" 
                 alt="KVS Infra project planning and infrastructure view" 
                 className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 filter grayscale-[20%]"
               />

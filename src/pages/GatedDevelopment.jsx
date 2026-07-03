@@ -17,7 +17,7 @@ export default function GatedDevelopment() {
       name: "KVS Meadows",
       badge: "High Appreciation",
       stats: "Strategic Plotted Development",
-      image: allProperties[0]?.cover_image || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+      image: "/images/kvs/project-1.jpg"
     },
     {
       id: "kvs-green-county",
@@ -25,7 +25,7 @@ export default function GatedDevelopment() {
       name: "KVS Green County",
       badge: "Investment Ready",
       stats: "Premium Residential Layout",
-      image: allProperties[1]?.cover_image || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+      image: "/images/kvs/project-2.jpg"
     },
     {
       id: "agricultural-estates",
@@ -33,7 +33,7 @@ export default function GatedDevelopment() {
       name: "Agricultural Estates",
       badge: "Long-Term Value",
       stats: "Organic Farming & Plantation",
-      image: allProperties[2]?.cover_image || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+      image: "/images/kvs/project-3.jpg"
     },
     {
       id: "strategic-land-banking",
@@ -41,7 +41,7 @@ export default function GatedDevelopment() {
       name: "Strategic Land Banking",
       badge: "Strategic Location",
       stats: "Future Appreciation",
-      image: allProperties[3]?.cover_image || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+      image: "/images/kvs/project-4.jpg"
     },
     {
       id: "premium-plotted-layouts",
@@ -49,7 +49,7 @@ export default function GatedDevelopment() {
       name: "Premium Plotted Layouts",
       badge: "Infrastructure Ready",
       stats: "Infrastructure Ready",
-      image: allProperties[4]?.cover_image || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+      image: "/images/kvs/project-5.jpg"
     },
     {
       id: "future-growth-projects",
@@ -57,7 +57,7 @@ export default function GatedDevelopment() {
       name: "Future Growth Projects",
       badge: "Future Growth",
       stats: "Metro Expansion Corridor",
-      image: allProperties[5]?.cover_image || "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
+      image: "/images/kvs/project-6.jpg"
     }
   ];
 
@@ -203,7 +203,7 @@ export default function GatedDevelopment() {
         <div className="absolute inset-0 z-0">
           <img 
             ref={heroImgRef}
-            src="https://framerusercontent.com/images/cb2qjlC0mEOI9CG9t6EdMxwNw.webp" 
+            src="/images/kvs/projects-hero.jpg" 
             alt="KVS Infra plotted development and gated community layout" 
             className="w-full h-full object-cover will-change-transform"
           />
@@ -219,7 +219,7 @@ export default function GatedDevelopment() {
           </h1>
           <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#c4a468] to-transparent mb-6"></div>
           <p className="text-sm sm:text-lg text-white/70 max-w-2xl font-light leading-relaxed">
-            Explore KVS Infra’s planned developments across Tirupati, Chandragiri, and Delhi NCR, designed for long-term value, infrastructure readiness, and secure community living.
+            Explore KVS Infra’s planned developments across Tirupati, Hyderabad, Chennai, and Bangalore, designed for long-term value, infrastructure readiness, and secure community living.
           </p>
         </div>
       </section>
