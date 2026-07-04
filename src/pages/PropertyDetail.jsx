@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Phone, Mail, FileText, CheckCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Mail, FileText, CheckCircle } from 'lucide-react';
 import propertiesData from '../data/properties.json';
 import PropertyCard from '../components/PropertyCard';
 
@@ -330,13 +330,8 @@ export default function PropertyDetail() {
               </form>
             )}
 
-            {/* Quick contact icons */}
             <div className="border-t border-white/15 pt-6 mt-2 flex flex-col gap-4 text-xs text-white/70">
-              <a href="tel:+12462324444" className="flex items-center gap-3 hover:text-sage transition-colors">
-                <Phone className="w-4 h-4 text-sage" />
-                <span>Call Us: +91 98765 43210</span>
-              </a>
-              <a href="mailto:sean@stewartcorealty.com" className="flex items-center gap-3 hover:text-sage transition-colors">
+              <a href="mailto:info@kvsinfra.com" className="flex items-center gap-3 hover:text-sage transition-colors">
                 <Mail className="w-4 h-4 text-sage" />
                 <span>Email: info@kvsinfra.com</span>
               </a>

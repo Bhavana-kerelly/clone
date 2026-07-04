@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, MapPin, CheckCircle, Clock } from 'lucide-react';
+import { Mail, MapPin, CheckCircle, Clock } from 'lucide-react';
 
 export default function Contact() {
   useEffect(() => {
@@ -90,16 +90,7 @@ export default function Contact() {
                   </div>
                 </a>
 
-                {/* Phone */}
-                <a href="tel:+919876543210" className="flex items-center gap-4 group text-left">
-                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">PHONE</span>
-                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 98765 43210</span>
-                  </div>
-                </a>
+
 
                 {/* Address / Headquarters */}
                 <div className="flex items-start gap-4 text-left">

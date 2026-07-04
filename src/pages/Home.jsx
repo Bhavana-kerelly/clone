@@ -82,7 +82,7 @@ export default function Home() {
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md mb-6 transform opacity-0 animate-[apple-fade-up_0.8s_0.2s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse"></span>
             <span className="text-[10px] font-medium tracking-[0.25em] uppercase text-sage">
-              KVS Infra &mdash; Kalyana Venkateswara Swamy Infra Pvt. Ltd.
+              KVS Infra
             </span>
           </div>
           

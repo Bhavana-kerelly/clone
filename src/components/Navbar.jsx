@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +82,7 @@ const navLinks = [
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center group">
-          <img src="/logo.png" alt="KVS Infra logo" className="h-8 w-auto object-contain" />
+          <img src="/logo.png" alt="KVS Infra logo" className="h-11 w-auto object-contain" />
         </Link>
 
         {/* Desktop Menu */}
@@ -95,17 +95,8 @@ const navLinks = [
             ))}
           </div>
 
-          <div className="flex items-center gap-4 border-l pl-6 border-dark-blue/10 dark:border-white/10">
-            <a 
-              href="tel:+919876543210" 
-              className={`flex items-center gap-2 text-sm font-semibold transition-all ${
-                isDarkPage ? 'text-sage hover:text-white' : 'text-dark-blue hover:text-dark-blue/70'
-              }`}
-            >
-              <Phone className="w-4 h-4" />
-              <span>+91 98765 43210</span>
-            </a>
-          </div>
+
+
         </div>
 
         {/* Hamburger Menu Toggle */}
@@ -139,10 +130,6 @@ const navLinks = [
 
         {/* Contact Info in Mobile Menu */}
         <div className="flex flex-col gap-4 border-t border-dark-blue/10 pt-6">
-          <a href="tel:+919876543210" className="flex items-center gap-3 text-dark-blue/80 hover:text-dark-blue">
-            <Phone className="w-5 h-5 text-sage" />
-            <span>+91 98765 43210</span>
-          </a>
           <a href="mailto:info@kvsinfra.com" className="flex items-center gap-3 text-dark-blue/80 hover:text-dark-blue">
             <Mail className="w-5 h-5 text-sage" />
             <span>info@kvsinfra.com</span>

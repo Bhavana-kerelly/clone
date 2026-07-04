@@ -10,7 +10,6 @@ export default function AboutUs() {
   const heroRef = useRef(null);
   const heroImgRef = useRef(null);
   const profileSectionRef = useRef(null);
-  const profileCardRef = useRef(null);
   const profileTextRef = useRef(null);
   const reviewsSectionRef = useRef(null);
   const trackRef = useRef(null);
@@ -49,22 +48,7 @@ export default function AboutUs() {
         }
       });
 
-      // 2. Dual-Axis Asynchronous Parallax for Profile Section
-      gsap.fromTo(profileCardRef.current,
-        { yPercent: 10, scale: 0.95, opacity: 0 },
-        {
-          yPercent: -10,
-          scale: 1,
-          opacity: 1,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: profileSectionRef.current,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1
-          }
-        }
-      );
+
 
       gsap.fromTo(profileTextRef.current,
         { yPercent: 5, opacity: 0.5 },
@@ -165,32 +149,14 @@ export default function AboutUs() {
         </div>
       </section>
 
-      {/* 2. INTERLOCKING PROFILE SECTION */}
-      <section ref={profileSectionRef} className="max-w-7xl mx-auto px-6 md:px-12 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-20">
-        
-        {/* Profile Interactive 3D Frame Layer */}
-        <div ref={profileCardRef} className="relative flex justify-center lg:justify-start will-change-transform">
-          <div className="relative w-full max-w-md aspect-[3/4] rounded-2xl overflow-hidden bg-dark-blue/5 border border-white/40 shadow-[0_30px_70px_rgba(0,0,0,0.08)] group">
-            <img 
-              src="https://framerusercontent.com/images/LXBNzM4Rz0JscKaKSl5mB0eGPM.jpg" 
-              alt="KVS Infra leadership team reviewing a development layout" 
-              className="w-full h-full object-cover transform scale-100 group-hover:scale-102 transition-transform duration-700 ease-out"
-            />
-            
-            {/* Apple Luxury Frosted Glassmorphism Banner Card */}
-            <div className="absolute bottom-6 left-6 right-6 bg-white/40 backdrop-blur-xl border border-white/30 p-6 rounded-xl text-white text-left shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-              <span className="text-[9px] uppercase tracking-[0.2em] text-[#c4a468] block font-bold mb-1">Managing Director</span>
-              <span className="font-serif text-2xl font-normal text-dark-blue">Chevireddy Mohith Reddy</span>
-            </div>
-          </div>
-        </div>
-
+      {/* 2. LEADERSHIP SECTION */}
+      <section ref={profileSectionRef} className="max-w-5xl mx-auto px-6 md:px-12 py-32 relative z-20">
         {/* Profile Details Container Frame */}
         <div ref={profileTextRef} className="flex flex-col gap-6 text-left will-change-transform">
           <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-[#c4a468]">
             Leadership
           </span>
-          <h2 className="font-display text-4xl font-light tracking-tight leading-none">
+          <h2 className="font-display text-4xl font-light tracking-tight leading-none text-white">
             Managing Director: <span className="font-serif italic font-normal text-[#c4a468] block sm:inline">Chevireddy Mohith Reddy</span>
           </h2>
           <div className="w-12 h-[1px] bg-[#c4a468] mb-2"></div>
@@ -200,26 +166,26 @@ export default function AboutUs() {
           </p>
 
           {/* Premium Glassmorphism Credentials Panel Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6 border-t border-dark-blue/5 pt-8">
-            <div className="bg-white/50 backdrop-blur-lg border border-white/60 p-6 rounded-2xl flex flex-col gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.02)]">
-              <div className="w-10 h-10 rounded-full bg-white border border-dark-blue/5 flex items-center justify-center">
-                <Award className="w-4 h-4 text-[#c4a468]" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 border-t border-white/[0.08] pt-8">
+            <div className="bg-[#ffffff03] border border-white/[0.08] p-6 rounded-2xl flex items-center gap-5 shadow-[0_15px_30px_rgba(0,0,0,0.15)]">
+              <div className="w-12 h-12 rounded-full border border-white/[0.08] flex items-center justify-center shrink-0">
+                <Award className="w-5 h-5 text-[#c4a468]" />
               </div>
               <div>
-                <span className="text-sm font-semibold text-dark-blue block tracking-wide">Bespoke Planning</span>
-                <p className="text-[11px] sm:text-xs text-dark-blue/60 mt-1.5 leading-relaxed font-light">
+                <span className="text-sm font-semibold text-white block tracking-wide">Bespoke Planning</span>
+                <p className="text-[11px] sm:text-xs text-white/60 mt-1 leading-relaxed font-light">
                   Every client receives tailored project guidance aligned with their land, location, and investment goals.
                 </p>
               </div>
             </div>
 
-            <div className="bg-white/50 backdrop-blur-lg border border-white/60 p-6 rounded-2xl flex flex-col gap-3 shadow-[0_10px_30px_rgba(0,0,0,0.02)]">
-              <div className="w-10 h-10 rounded-full bg-white border border-dark-blue/5 flex items-center justify-center">
-                <Shield className="w-4 h-4 text-[#c4a468]" />
+            <div className="bg-[#ffffff03] border border-white/[0.08] p-6 rounded-2xl flex items-center gap-5 shadow-[0_15px_30px_rgba(0,0,0,0.15)]">
+              <div className="w-12 h-12 rounded-full border border-white/[0.08] flex items-center justify-center shrink-0">
+                <Shield className="w-5 h-5 text-[#c4a468]" />
               </div>
               <div>
-                <span className="text-sm font-semibold text-dark-blue block tracking-wide">Transparent Delivery</span>
-                <p className="text-[11px] sm:text-xs text-dark-blue/60 mt-1.5 leading-relaxed font-light">
+                <span className="text-sm font-semibold text-white block tracking-wide">Transparent Delivery</span>
+                <p className="text-[11px] sm:text-xs text-white/60 mt-1 leading-relaxed font-light">
                   Full disclosure, clear approvals, and honest updates at every stage of the project journey.
                 </p>
               </div>

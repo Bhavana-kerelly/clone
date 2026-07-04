@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight, Link as LinkIcon, Camera, MessageCircle, Video } from 'lucide-react';
+import { Mail, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight, Link as LinkIcon, Camera, MessageCircle, Video } from 'lucide-react';
 export default function Footer() {
   // 3D Perspective Matrix Tracking States
   const containerRef = useRef(null);
@@ -180,7 +180,7 @@ export default function Footer() {
           <div className="lg:col-span-5 flex flex-col items-start text-left" style={{ transform: 'translateZ(60px)' }}>
             <div className="flex flex-col gap-2 mb-6 group/logo cursor-pointer">
               <div className="bg-white px-4 py-3 rounded-2xl w-fit shadow-xl transition-all duration-700 group-hover/logo:shadow-sage/20 group-hover/logo:-translate-y-1">
-                <img src="/logo.png" alt="KVS Infra logo" className="h-8 w-auto object-contain" />
+                <img src="/logo.png" alt="KVS Infra logo" className="h-11 w-auto object-contain" />
               </div>
               <span className="text-[9px] tracking-[0.4em] uppercase leading-none mt-1 block text-white/30 font-bold">
                 SHAPING LAND. CREATING VALUE.
@@ -216,13 +216,7 @@ export default function Footer() {
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
               </a>
 
-              <a href="tel:+919876543210" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
-                  <span className="font-light">+91 98765 43210</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
-              </a>
+
 
               <div className="flex items-center gap-3 text-white/60">
                 <MapPin className="w-4 h-4 opacity-40 text-sage" />
