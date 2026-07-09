@@ -198,8 +198,9 @@ export default function GatedDevelopment() {
   return (
     <div ref={containerRef} className="bg-dark-blue min-h-screen text-white overflow-hidden selection:bg-[#c4a468] selection:text-white">
       
-      {/* 1. HERO HEADER */}
-      <section className="relative h-[75vh] min-h-[550px] flex items-center justify-center px-6 md:px-12 bg-dark-blue text-white overflow-hidden">
+      {/* HERO & GRID WRAPPER (Shares a continuous background photo) */}
+      <div className="relative w-full bg-dark-blue overflow-hidden">
+        {/* Continuous Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
             ref={heroImgRef}
@@ -207,93 +208,98 @@ export default function GatedDevelopment() {
             alt="KVS Infra plotted development and gated community layout" 
             className="w-full h-full object-cover will-change-transform"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-dark-blue/10 via-dark-blue/40 to-[#0b121f]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-dark-blue/15 via-dark-blue/10 to-[#0b121f]"></div>
         </div>
 
-        <div ref={heroRef} className="relative z-10 max-w-5xl mx-auto text-center flex flex-col items-center">
-          <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#c4a468] mb-4">
-            Development Portfolio
-          </span>
-          <h1 className="font-display text-5xl sm:text-7xl font-extralight tracking-tight leading-none text-white mb-6">
-            Structured <span className="font-serif italic font-normal text-[#c4a468]">Projects</span>
-          </h1>
-          <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#c4a468] to-transparent mb-6"></div>
-          <p className="text-sm sm:text-lg text-white/70 max-w-2xl font-light leading-relaxed">
-            Explore KVS Infra’s planned developments across Tirupati, Hyderabad, Chennai, and Bangalore, designed for long-term value, infrastructure readiness, and secure community living.
-          </p>
-        </div>
-      </section>
-
-      {/* 2. DESCRIPTION BENTO GRID SECTION */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 py-24 flex flex-col gap-24 relative z-10 -mt-20">
-        
-        <div ref={infoGridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Apes Hill */}
-          <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
-            <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">INVESTMENT FOCUS</span>
-            <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Strategic Land Banking</h2>
-            <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
-              Acquire premium land parcels positioned in emerging growth corridors with strong long-term appreciation potential.
+        {/* 1. HERO HEADER */}
+        <section className="relative h-[75vh] min-h-[550px] flex items-center justify-center px-6 md:px-12 text-white z-10">
+          <div ref={heroRef} className="max-w-5xl mx-auto text-center flex flex-col items-center">
+            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-[#c4a468] mb-4">
+              Development Portfolio
+            </span>
+            <h1 className="font-display text-5xl sm:text-7xl font-extralight tracking-tight leading-none text-white mb-6">
+              Structured <span className="font-serif italic font-normal text-[#c4a468]">Projects</span>
+            </h1>
+            <div className="w-16 h-[1px] bg-gradient-to-r from-transparent via-[#c4a468] to-transparent mb-6"></div>
+            <p className="text-sm sm:text-lg text-white/70 max-w-2xl font-light leading-relaxed">
+              Explore KVS Infra’s planned developments across Tirupati, Hyderabad, Chennai, and Bangalore, designed for long-term value, infrastructure readiness, and secure community living.
             </p>
           </div>
+        </section>
 
-          {/* Porters Place */}
-          <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
-            <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">LAND CATEGORIES</span>
-            <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Agricultural & Plotted Land</h2>
-            <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
-              Offering agricultural, non-agricultural, and plotted developments designed for diverse investment needs.
-            </p>
-          </div>
+        {/* 2. DESCRIPTION BENTO GRID SECTION */}
+        <section className="relative w-full py-24 -mt-20 z-10">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col gap-24">
+            
+            <div ref={infoGridRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* Apes Hill */}
+              <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
+                <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">INVESTMENT FOCUS</span>
+                <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Strategic Land Banking</h2>
+                <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
+                  Acquire premium land parcels positioned in emerging growth corridors with strong long-term appreciation potential.
+                </p>
+              </div>
 
-          {/* Vistara Residences */}
-          <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
-            <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">DEVELOPMENT APPROACH</span>
-            <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Future-Ready Infrastructure</h2>
-            <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
-              Projects are planned with organized layouts, road connectivity, and scalable development for sustainable growth.
-            </p>
-          </div>
+              {/* Porters Place */}
+              <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
+                <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">LAND CATEGORIES</span>
+                <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Agricultural & Plotted Land</h2>
+                <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
+                  Offering agricultural, non-agricultural, and plotted developments designed for diverse investment needs.
+                </p>
+              </div>
 
-          {/* Royal Westmoreland */}
-          <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
-            <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">VISION</span>
-            <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Institutional-Grade Developments</h2>
-            <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
-              Building high-quality real estate assets backed by strategic planning and long-term investment value.
-            </p>
-          </div>
-        </div>
+              {/* Vistara Residences */}
+              <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
+                <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">DEVELOPMENT APPROACH</span>
+                <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Future-Ready Infrastructure</h2>
+                <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
+                  Projects are planned with organized layouts, road connectivity, and scalable development for sustainable growth.
+                </p>
+              </div>
 
-        {/* Community benefits strip */}
-        <div ref={featureStripRef} className="bg-dark-blue text-white rounded-3xl p-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-center items-center relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
-          
-          <div className="flex flex-col items-center gap-3 relative z-10">
-            <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-              <Shield className="w-5 h-5 text-[#c4a468]" />
+              {/* Royal Westmoreland */}
+              <div className="bento-block group relative bg-white border border-dark-blue/5 shadow-[0_20px_50px_rgba(0,0,0,0.02)] p-10 rounded-3xl flex flex-col gap-4 transition-all duration-500 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-[#c4a468]/30">
+                <span className="text-[10px] font-bold text-[#c4a468] uppercase tracking-widest">VISION</span>
+                <h2 className="font-display text-3xl font-light text-dark-blue tracking-tight group-hover:text-[#c4a468] transition-colors duration-300">Institutional-Grade Developments</h2>
+                <p className="text-xs sm:text-sm text-dark-blue/70 leading-relaxed text-justify font-light">
+                  Building high-quality real estate assets backed by strategic planning and long-term investment value.
+                </p>
+              </div>
             </div>
-            <span className="font-semibold text-base tracking-wide">Strategic Locations</span>
-            <p className="text-xs text-white/60 max-w-xs font-light leading-relaxed">Projects located in high-growth corridors with excellent future appreciation potential.</p>
-          </div>
-          
-          <div className="flex flex-col items-center gap-3 relative z-10">
-            <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-              <Award className="w-5 h-5 text-[#c4a468]" />
+
+            {/* Community benefits strip */}
+            <div ref={featureStripRef} className="bg-dark-blue/80 border border-white/5 backdrop-blur-md text-white rounded-3xl p-12 grid grid-cols-1 md:grid-cols-3 gap-10 text-center items-center relative overflow-hidden shadow-2xl">
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+              
+              <div className="flex flex-col items-center gap-3 relative z-10">
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
+                  <Shield className="w-5 h-5 text-[#c4a468]" />
+                </div>
+                <span className="font-semibold text-base tracking-wide">Strategic Locations</span>
+                <p className="text-xs text-white/60 max-w-xs font-light leading-relaxed">Projects located in high-growth corridors with excellent future appreciation potential.</p>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 relative z-10">
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
+                  <Award className="w-5 h-5 text-[#c4a468]" />
+                </div>
+                <span className="font-semibold text-base tracking-wide">Verified Land Assets</span>
+                <p className="text-xs text-white/60 max-w-xs font-light leading-relaxed">Clear documentation, planned developments, and transparent investment opportunities.</p>
+              </div>
+              
+              <div className="flex flex-col items-center gap-3 relative z-10">
+                <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
+                  <Landmark className="w-5 h-5 text-[#c4a468]" />
+                </div>
+                <span className="font-semibold text-base tracking-wide">Long-Term Investment Value</span>
+                <p className="text-xs text-white/60 max-w-xs font-light leading-relaxed">Focused on land banking and sustainable appreciation for individual and institutional investors.</p>
+              </div>
             </div>
-            <span className="font-semibold text-base tracking-wide">Verified Land Assets</span>
-            <p className="text-xs text-white/60 max-w-xs font-light leading-relaxed">Clear documentation, planned developments, and transparent investment opportunities.</p>
           </div>
-          
-          <div className="flex flex-col items-center gap-3 relative z-10">
-            <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-2">
-              <Landmark className="w-5 h-5 text-[#c4a468]" />
-            </div>
-            <span className="font-semibold text-base tracking-wide">Long-Term Investment Value</span>
-            <p className="text-xs text-white/60 max-w-xs font-light leading-relaxed">Focused on land banking and sustainable appreciation for individual and institutional investors.</p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* 3. LIST OF PROPERTIES WITH SCROLL-DRIVEN PARALLAX SANDWICH */}
       <section className="py-32 border-t border-dark-blue/5 bg-gradient-to-b from-[#2e415703] to-cream px-6 md:px-12 max-w-7xl mx-auto relative z-10">

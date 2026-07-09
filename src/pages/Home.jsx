@@ -29,11 +29,11 @@ export default function Home() {
 
   // Testimonials
   const testimonials = [
-    { text: "KVS Infra made the entire plot booking process transparent and simple. From site visit to registration, every step was handled with real professionalism.", author: "R.S." },
-    { text: "We invested in KVS Meadows two years ago and the appreciation has been remarkable. The layout, roads, and drainage were exactly as promised.", author: "V.K." },
-    { text: "The team's honesty about titles and documentation gave us complete confidence to buy our first plot in Tirupati.", author: "P.N." },
-    { text: "From the initial consultation to the final registration, KVS Infra supported us at every stage of buying our villa.", author: "A.R." },
-    { text: "KVS Infra's Chandragiri layout is beautifully planned. The open spaces and infrastructure quality are far above what we expected for the price.", author: "S.M." }
+    { text: "KVS Infra made the entire plot booking process transparent and simple. From site visit to registration, every step was handled with real professionalism.", author: "R.S.", image: "/images/client_rs.png" },
+    { text: "We invested in KVS Meadows two years ago and the appreciation has been remarkable. The layout, roads, and drainage were exactly as promised.", author: "V.K.", image: "/images/client_vk.png" },
+    { text: "The team's honesty about titles and documentation gave us complete confidence to buy our first plot in Tirupati.", author: "P.N.", image: "/images/client_pn.png" },
+    { text: "From the initial consultation to the final registration, KVS Infra supported us at every stage of buying our villa.", author: "A.R.", image: "/images/client_ar.png" },
+    { text: "KVS Infra's Chandragiri layout is beautifully planned. The open spaces and infrastructure quality are far above what we expected for the price.", author: "S.M.", image: "/images/client_sm.png" }
   ];
 
   useEffect(() => {
@@ -328,20 +328,25 @@ export default function Home() {
           </span>
           
           {/* Dynamic Window Engine */}
-          <div className="min-h-[280px] sm:min-h-[220px] flex items-center justify-center relative w-full select-none">
+          <div className="min-h-[380px] sm:min-h-[320px] flex items-center justify-center relative w-full select-none">
             {testimonials.map((t, idx) => (
               <div 
                 key={idx}
-                className={`transition-all duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] absolute w-full max-w-4xl px-4 transform ${
+                className={`transition-all duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] absolute w-full max-w-4xl px-4 transform flex flex-col items-center ${
                   idx === activeTestimonial 
                     ? 'opacity-100 scale-100 translate-y-0 filter blur-0' 
                     : 'opacity-0 scale-[0.95] translate-y-8 filter blur-md pointer-events-none'
                 }`}
               >
+                {t.image && (
+                  <div className="w-20 h-20 rounded-full overflow-hidden border border-sage/40 mb-6 shadow-xl shadow-black/50 transition-all duration-700">
+                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
+                  </div>
+                )}
                 <blockquote className="font-serif text-2xl sm:text-4xl italic leading-snug text-white/90 font-light tracking-wide font-cursive">
                   "{t.text}"
                 </blockquote>
-                <div className="flex items-center justify-center gap-3 mt-10">
+                <div className="flex items-center justify-center gap-3 mt-8">
                   <span className="h-[1px] w-6 bg-sage/30"></span>
                   <cite className="text-[10px] uppercase tracking-[0.3em] font-bold text-sage not-italic">
                     Validated Portfolio Client {t.author}

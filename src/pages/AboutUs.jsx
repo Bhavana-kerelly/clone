@@ -195,8 +195,18 @@ export default function AboutUs() {
       </section>
 
       {/* 3. TESTIMONIALS - APPLE-INSPIRED INFINITE VELOCITY CAROUSEL */}
-      <section ref={reviewsSectionRef} className="py-36 border-t border-dark-blue/5 bg-gradient-to-b from-[#2e415703] to-cream relative z-10 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
+      <section ref={reviewsSectionRef} className="py-36 border-t border-dark-blue/5 relative z-10 overflow-hidden">
+        {/* Background Photo */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/kvs/Lifestyle.jpg" 
+            alt="KVS lifestyle community background" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-cream/95 via-cream/80 to-cream/95"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16 relative z-10">
           <div className="text-center flex flex-col items-center">
             <span className="text-[11px] font-semibold tracking-[0.3em] uppercase text-[#c4a468] mb-3">
               Reviews
@@ -209,7 +219,7 @@ export default function AboutUs() {
         </div>
 
         {/* Endless Cinematic Ribbon View Frame */}
-        <div className="relative w-full flex overflow-hidden py-10 select-none">
+        <div className="relative w-full flex overflow-hidden py-10 select-none z-10">
           {/* Linear Mask Blur Shader for Luxury Smooth Clipping Edges */}
           <div className="absolute left-0 inset-y-0 w-32 bg-gradient-to-r from-cream via-cream/50 to-transparent z-20 pointer-events-none" />
           <div className="absolute right-0 inset-y-0 w-32 bg-gradient-to-l from-cream via-cream/50 to-transparent z-20 pointer-events-none" />

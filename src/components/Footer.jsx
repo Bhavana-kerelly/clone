@@ -109,11 +109,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-24 border-b border-white/[0.05]" style={{ transform: 'translateZ(40px)' }}>
 
           {/* Deck Block 1 */}
-          <div className="group relative bg-white/[0.01] hover:bg-white/[0.03] border border-white/[0.03] hover:border-white/10 rounded-[2.5rem] p-10 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden">
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-gradient-to-br from-white/[0.02] via-transparent to-transparent"></div>
-            <div className="flex flex-col gap-6">
+          <div className="group relative bg-[#07090e]/50 hover:bg-[#07090e]/30 border border-white/[0.05] hover:border-sage/30 rounded-[2.5rem] p-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col gap-6">
+            <div className="w-full h-44 rounded-[1.5rem] overflow-hidden relative">
+              <img 
+                src="/images/kvs/project-3.jpg" 
+                alt="Projects & Developments" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07090e]/40 to-transparent"></div>
+            </div>
+            
+            <div className="flex flex-col gap-4 relative z-10">
               <div className="flex items-center justify-between">
-                <span className="font-display text-7xl font-extralight tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
+                <span className="font-display text-5xl font-light tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
                   25+
                 </span>
                 <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
@@ -130,11 +138,19 @@ export default function Footer() {
           </div>
 
           {/* Deck Block 2 */}
-          <div className="group relative bg-white/[0.01] hover:bg-white/[0.03] border border-white/[0.03] hover:border-white/10 rounded-[2.5rem] p-10 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden">
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-gradient-to-br from-white/[0.02] via-transparent to-transparent"></div>
-            <div className="flex flex-col gap-6">
+          <div className="group relative bg-[#07090e]/50 hover:bg-[#07090e]/30 border border-white/[0.05] hover:border-sage/30 rounded-[2.5rem] p-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col gap-6">
+            <div className="w-full h-44 rounded-[1.5rem] overflow-hidden relative">
+              <img 
+                src="/images/kvs/growth-hero.jpg" 
+                alt="Strategic Growth Corridors" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07090e]/40 to-transparent"></div>
+            </div>
+
+            <div className="flex flex-col gap-4 relative z-10">
               <div className="flex items-center justify-between">
-                <span className="font-display text-7xl font-extralight tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
+                <span className="font-display text-5xl font-light tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
                   3+
                 </span>
                 <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
@@ -151,11 +167,19 @@ export default function Footer() {
           </div>
 
           {/* Deck Block 3 */}
-          <div className="group relative bg-white/[0.01] hover:bg-white/[0.03] border border-white/[0.03] hover:border-white/10 rounded-[2.5rem] p-10 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden">
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none bg-gradient-to-br from-white/[0.02] via-transparent to-transparent"></div>
-            <div className="flex flex-col gap-6">
+          <div className="group relative bg-[#07090e]/50 hover:bg-[#07090e]/30 border border-white/[0.05] hover:border-sage/30 rounded-[2.5rem] p-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col gap-6">
+            <div className="w-full h-44 rounded-[1.5rem] overflow-hidden relative">
+              <img 
+                src="/images/kvs/sustainable.jpg" 
+                alt="Commitment to Trust" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#07090e]/40 to-transparent"></div>
+            </div>
+
+            <div className="flex flex-col gap-4 relative z-10">
               <div className="flex items-center justify-between">
-                <span className="font-display text-7xl font-extralight tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
+                <span className="font-display text-5xl font-light tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
                   100%
                 </span>
                 <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
