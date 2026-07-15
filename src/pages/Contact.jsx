@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, CheckCircle, Clock } from 'lucide-react';
+import { Mail, MapPin, CheckCircle, Clock, Phone } from 'lucide-react';
 
 export default function Contact() {
   useEffect(() => {
@@ -79,14 +79,25 @@ export default function Contact() {
               {/* Contact Icons Column */}
               <div className="relative z-10 flex flex-col gap-6 border-t border-white/[0.08] pt-8">
                 
+                {/* Phone */}
+                <a href="tel:+919000239333" className="flex items-center gap-4 group text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">PHONE</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 9000239333</span>
+                  </div>
+                </a>
+
                 {/* Email */}
-                <a href="mailto:info@kvsinfra.com" className="flex items-center gap-4 group text-left">
+                <a href="mailto:harshith@kvsinfra.com" className="flex items-center gap-4 group text-left">
                   <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">EMAIL</span>
-                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">info@kvsinfra.com</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">harshith@kvsinfra.com</span>
                   </div>
                 </a>
 
@@ -98,9 +109,8 @@ export default function Contact() {
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">HEADQUARTERS</span>
-                    <span className="text-xs font-medium text-white/90 block">AeroGalaxy, Hyderabad, India</span>
-                    <span className="text-[10px] text-white/40 font-light mt-0.5 block">Branches: Tirupati, Bengaluru, Chennai</span>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">ADDRESS</span>
+                    <span className="text-xs font-medium text-white/90 block">1-4,Thummalagunta,Tirupati Rural, Tirupati District-517502</span>
                   </div>
                 </div>
 

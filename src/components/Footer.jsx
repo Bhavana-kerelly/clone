@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight, Link as LinkIcon, Camera, MessageCircle, Video } from 'lucide-react';
+import { Mail, MapPin, ArrowUpRight, ShieldCheck, Globe, Layers, ChevronRight, Link as LinkIcon, Camera, MessageCircle, Video, Phone } from 'lucide-react';
 export default function Footer() {
   // 3D Perspective Matrix Tracking States
   const containerRef = useRef(null);
@@ -232,19 +232,27 @@ export default function Footer() {
 
             {/* Direct Vector Access Points */}
             <div className="flex flex-col gap-4 w-full max-w-sm text-sm border-t border-white/[0.05] pt-8">
-              <a href="mailto:info@kvsinfra.com" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+              <a href="tel:+919000239333" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
+                  <span className="font-light">+91 9000239333</span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
+              </a>
+              
+              <a href="mailto:harshith@kvsinfra.com" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
-                  <span className="font-light">info@kvsinfra.com</span>
+                  <span className="font-light">harshith@kvsinfra.com</span>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
               </a>
 
 
 
-              <div className="flex items-center gap-3 text-white/60">
-                <MapPin className="w-4 h-4 opacity-40 text-sage" />
-                <span className="font-light">Headquarters: AeroGalaxy, Hyderabad, India<br /><span className="text-xs text-white/30">Branches: Tirupati, Bengaluru, Chennai</span></span>
+              <div className="flex items-start gap-3 text-white/60">
+                <MapPin className="w-4 h-4 opacity-40 text-sage shrink-0 mt-1" />
+                <span className="font-light">Address: 1-4,Thummalagunta,Tirupati Rural,<br />Tirupati District-517502</span>
               </div>
             </div>
           </div>

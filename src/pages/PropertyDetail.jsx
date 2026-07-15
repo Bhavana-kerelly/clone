@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight, Mail, FileText, CheckCircle } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Mail, FileText, CheckCircle, Phone } from 'lucide-react';
 import propertiesData from '../data/properties.json';
 import PropertyCard from '../components/PropertyCard';
 
@@ -331,9 +331,13 @@ export default function PropertyDetail() {
             )}
 
             <div className="border-t border-white/15 pt-6 mt-2 flex flex-col gap-4 text-xs text-white/70">
-              <a href="mailto:info@kvsinfra.com" className="flex items-center gap-3 hover:text-sage transition-colors">
+              <a href="tel:+919000239333" className="flex items-center gap-3 hover:text-sage transition-colors">
+                <Phone className="w-4 h-4 text-sage" />
+                <span>Phone: +91 9000239333</span>
+              </a>
+              <a href="mailto:harshith@kvsinfra.com" className="flex items-center gap-3 hover:text-sage transition-colors">
                 <Mail className="w-4 h-4 text-sage" />
-                <span>Email: info@kvsinfra.com</span>
+                <span>Email: harshith@kvsinfra.com</span>
               </a>
             </div>
           </div>
