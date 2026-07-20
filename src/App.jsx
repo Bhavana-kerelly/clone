@@ -15,7 +15,7 @@ import Contact from './pages/Contact';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/kvs">
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
