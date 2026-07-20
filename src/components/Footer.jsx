@@ -215,46 +215,9 @@ export default function Footer() {
               KVS Infra is a trusted real estate development company specializing in residential projects, strategic land banking, plotted developments, and investment-focused communities. We create projects designed for sustainable growth, transparent ownership, and long-term value creation.
             </p>
 
-            <div className="flex items-center gap-4 mb-10">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <LinkIcon className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <Camera className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <MessageCircle className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/40 hover:text-sage hover:border-sage/50 transition-all duration-300 hover:-translate-y-1">
-                <Video className="w-4 h-4" />
-              </a>
-            </div>
-
-            {/* Direct Vector Access Points */}
-            <div className="flex flex-col gap-4 w-full max-w-sm text-sm border-t border-white/[0.05] pt-8">
-              <a href="tel:+919000239333" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
-                  <span className="font-light">+91 9000239333</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
-              </a>
-              
-              <a href="mailto:harshith@kvsinfra.com" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
-                <div className="flex items-center gap-3">
-                  <Mail className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
-                  <span className="font-light">harshith@kvsinfra.com</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
-              </a>
 
 
 
-              <div className="flex items-start gap-3 text-white/60">
-                <MapPin className="w-4 h-4 opacity-40 text-sage shrink-0 mt-1" />
-                <span className="font-light">Address: 1-4,Thummalagunta,Tirupati Rural,<br />Tirupati District-517502</span>
-              </div>
-            </div>
           </div>
 
           {/* Right Links Navigation Columns */}
@@ -264,7 +227,7 @@ export default function Footer() {
             <div className="flex flex-col gap-8">
               <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-sage">COMPANY</span>
               <div className="flex flex-col gap-4 text-sm text-white/40">
-                {['Home', 'About Us', 'Our Projects', 'Investment Opportunities', 'Leadership', 'Contact Us', 'Quick Links'].map((item, index) => (
+                {['Home', 'About Us', 'Our Projects', 'Contact Us'].map((item, index) => (
                   <Link
                     key={index}
                     to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-')}`}
@@ -279,22 +242,46 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Column 2 */}
-            <div className="flex flex-col gap-8">
-              <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-sage">RESOURCES</span>
-              <div className="flex flex-col gap-4 text-sm text-white/40">
-                {['Why Invest with KVS Infra', 'Schedule a Site Visit', 'FAQs', 'Privacy Policy', 'Terms & Conditions'].map((item, index) => (
-                  <Link
-                    key={index}
-                    to="#"
-                    onMouseEnter={() => setActiveTab(`policy-${index}`)}
-                    onMouseLeave={() => setActiveTab(null)}
-                    className="hover:text-white transition-all duration-300 flex items-center gap-2 group/item"
-                  >
-                    <ChevronRight className={`w-3 h-3 text-sage transition-all duration-300 ${activeTab === `policy-${index}` ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-2'}`} />
-                    <span className="transform group-hover/item:translate-x-1 transition-transform duration-300">{item}</span>
-                  </Link>
-                ))}
+            {/* Column 2 - Contact Info */}
+            <div className="flex flex-col gap-4 w-full text-sm">
+              <a href="tel:+919478899999" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
+                  <span className="font-light">+91 9478899999</span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
+              </a>
+
+              <a href="tel:+919700703020" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
+                  <span className="font-light">+91 9700703020</span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
+              </a>
+              
+              <a href="mailto:md@kvsgroup.co.in" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+                <div className="flex items-center gap-3">
+                  <Mail className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
+                  <span className="font-light">md@kvsgroup.co.in</span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
+              </a>
+
+              <a href="https://www.kvsgroup.co.in" target="_blank" rel="noopener noreferrer" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+                <div className="flex items-center gap-3">
+                  <Globe className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
+                  <span className="font-light">www.kvsgroup.co.in</span>
+                </div>
+                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
+              </a>
+
+              <div className="flex items-start gap-3 text-white/60 mt-2 pr-4">
+                <MapPin className="w-4 h-4 opacity-40 text-sage shrink-0 mt-1" />
+                <span className="font-light leading-relaxed">
+                  <strong className="font-medium text-white/80">Corporate Office:</strong> Auro Galaxy, Hyderabad<br /><br />
+                  <strong className="font-medium text-white/80">Registered Address:</strong> 1-4, Thummalagunta, Tirupati Rural, Tirupati District-517502
+                </span>
               </div>
             </div>
 

@@ -24,32 +24,13 @@ export default function Navbar() {
     setIsOpen(false);
   }, [location]);
 
-  // Determine navbar background color based on scroll and current route
-  const darkPages = [
-    '/',
-    '/search-result-sales',
-    '/property-details-sales',
-    '/gated-development',
-    '/about-barbados',
-    '/about-us',
-    '/podcasts',
-    '/podcast-list',
-    '/for-buyers',
-    '/contact'
-  ];
+  // Logo navy colour — matches the KVS dark navy in logo.png
+  const LOGO_COLOR = '#1a2b5e';
 
-  const isDarkPage = darkPages.some((route) => location.pathname === route || location.pathname.startsWith(route));
-  
-  const navBg = scrolled 
-    ? (isDarkPage ? 'glass-nav-dark shadow-lg border-b border-dark-blue/10 text-white' : 'glass-nav shadow-lg border-b border-dark-blue/5 text-dark-blue')
-    : (isDarkPage ? 'bg-transparent text-white' : 'bg-transparent text-dark-blue');
-
-  const activeClass = ({ isActive }) => 
-    `font-semibold transition-colors duration-200 ${
-      isActive 
-        ? (isDarkPage ? 'text-sage border-b-2 border-sage' : 'text-dark-blue border-b-2 border-dark-blue') 
-        : (isDarkPage ? 'text-white/80 hover:text-white' : 'text-dark-blue/70 hover:text-dark-blue')
-    } pb-1`;
+  const activeClass = ({ isActive }) =>
+    isActive
+      ? 'font-semibold pb-1 transition-colors duration-200 border-b-2'
+      : 'font-semibold pb-1 transition-colors duration-200 hover:opacity-70';
 const navLinks = [
   {
     name: "Home",
@@ -60,17 +41,8 @@ const navLinks = [
     path: "/about-us",
   },
   {
-    name: "Business Model",
-    path: "/about-barbados",
-  },
-  {
     name: "Projects",
     path: "/gated-development",
-  },
-
-  {
-    name: "Growth",
-    path: "/for-buyers",
   },
   {
     name: "Contact",
@@ -78,18 +50,26 @@ const navLinks = [
   },
 ];
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${scrolled ? 'py-4' : 'py-6'}`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white shadow-sm border-b border-gray-100 ${scrolled ? 'py-2' : 'py-4'}`}
+      style={{ color: LOGO_COLOR }}
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center group">
-          <img src="/logo.png" alt="KVS Infra logo" className="h-11 w-auto object-contain" />
+          <img src="/logo.png" alt="KVS Infra logo" className="h-9 w-auto object-contain" />
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-8">
           <div className="flex items-center gap-6">
             {navLinks.map((link) => (
-              <NavLink key={link.name} to={link.path} className={activeClass}>
+              <NavLink
+                key={link.name}
+                to={link.path}
+                className={activeClass}
+                style={{ color: LOGO_COLOR }}
+              >
                 {link.name}
               </NavLink>
             ))}

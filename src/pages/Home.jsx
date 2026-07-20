@@ -1,8 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Search, ChevronLeft, ChevronRight, Check, ArrowRight, Compass, Home as HomeIcon, ShieldCheck, Building2, TrendingUp, Users } from 'lucide-react';
 import propertiesData from '../data/properties.json';
 import PropertyCard from '../components/PropertyCard';
+import HeroSection from '../components/HeroSection';
+function AnimatedNumber({ value, suffix = "" }) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  
+  const numValue = parseInt(value);
+  const isNumber = !isNaN(numValue);
+
+  useEffect(() => {
+    if (!isNumber) return;
+    
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const duration = 2000;
+          const startTime = performance.now();
+          
+          const updateCounter = (currentTime) => {
+            const elapsedTime = currentTime - startTime;
+            if (elapsedTime < duration) {
+              const progress = elapsedTime / duration;
+              const easeOut = 1 - Math.pow(1 - progress, 3);
+              setCount(Math.floor(easeOut * numValue));
+              requestAnimationFrame(updateCounter);
+            } else {
+              setCount(numValue);
+            }
+          };
+          requestAnimationFrame(updateCounter);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+    
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [numValue, isNumber]);
+
+  if (!isNumber) return <span ref={ref}>{value}</span>;
+  return <span ref={ref}>{count}{suffix}</span>;
+}
 
 export default function Home() {
   const navigate = useNavigate();
@@ -58,97 +100,252 @@ export default function Home() {
   return (
     <div className="bg-[#07090E] text-[#F5F5F7] font-sans antialiased selection:bg-white/20 selection:text-white overflow-x-hidden">
       
-      {/* 1. CINEMATIC HERO CANVAS */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-12 pt-28 pb-20 overflow-hidden">
-        {/* Apple Atmospheric Space Backing */}
-        <div className="absolute inset-0 z-0">
-          <video 
-            src="/hero-video.mp4" 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full h-full object-cover scale-100 animate-[apple-scale_30s_cubic-bezier(0.25,1,0.5,1)_infinite] opacity-40 filter brightness-90"
+      {/* 1. PREMIUM HERO — two-column cinematic slider */}
+      <HeroSection />
+
+      {/* 2. ABOUT US SECTION */}
+      <section className="py-16 px-6 sm:px-12 lg:px-20 bg-white">
+        <div className="relative w-full overflow-hidden rounded-2xl">
+          {/* Background city image */}
+          <img
+            src="/images/kvs/aerial-2.jpg"
+            alt="City skyline"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
-          {/* Depth Scrims */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#07090E]/80 via-transparent to-[#07090E]"></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#07090E] via-transparent to-[#07090E] opacity-60"></div>
-          {/* Radial Ambient Glow */}
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-sage/10 rounded-full blur-[140px] pointer-events-none"></div>
-        </div>
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-black/68" />
 
-        {/* Hero Interactive Deck */}
-        <div className="relative z-10 max-w-6xl mx-auto text-center flex flex-col items-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.04] border border-white/[0.08] backdrop-blur-md mb-6 transform opacity-0 animate-[apple-fade-up_0.8s_0.2s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-            <span className="w-1.5 h-1.5 rounded-full bg-sage animate-pulse"></span>
-            <span className="text-[10px] font-medium tracking-[0.25em] uppercase text-sage">
-              KVS Infra
-            </span>
+          {/* Content — centred */}
+          <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-16 py-16 md:py-24 text-center">
+
+            {/* Heading */}
+            <h2 className="text-3xl md:text-[2.2rem] font-semibold text-white mb-6 tracking-tight">
+              Built on Vision. Driven by Scale.
+            </h2>
+
+            {/* Paragraphs */}
+            <p className="text-white/80 text-[0.95rem] md:text-base leading-relaxed mb-4">
+              Established in 2019, KVS Infra has emerged as a fast-growing real estate developer specializing in land aggregation, plotted developments, residential communities, and premium infrastructure projects. Headquartered in Hyderabad, with a strong presence across Tirupati, Chennai, and Bangalore, we are committed to creating developments that deliver long-term value for customers and investors alike.
+            </p>
+            <p className="text-white/80 text-[0.95rem] md:text-base leading-relaxed mb-10">
+              Driven by strategic land banking, innovative planning, and quality execution, KVS Infra continues expanding into high-growth metro markets while building sustainable communities. Every project reflects our commitment to transparency, excellence, and creating spaces that inspire future generations.
+            </p>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8 mb-12">
+              {[
+                { number: 25,   suffix: '+ Lakh', sub: 'Sq.Ft.', label: 'Developed & Sold' },
+                { number: 1000, suffix: '+',      sub: 'Acres',  label: 'Land Delivered' },
+                { number: 2019, suffix: '',       sub: '',       label: 'Established' },
+                { number: 4,    suffix: '+',      sub: 'Cities', label: 'Strong Presence' },
+                { number: 'Growing', suffix: '',  sub: '',       label: 'Metro Expansion' },
+              ].map(({ number, suffix, sub, label }) => (
+                <div key={label} className="flex flex-col items-center text-center">
+                  <div className="flex items-baseline gap-1 mb-1.5">
+                    <span className="text-3xl md:text-4xl font-bold tracking-tighter" style={{ color: '#e63535' }}>
+                      <AnimatedNumber value={number} suffix={suffix} />
+                    </span>
+                    {sub && <span className="text-sm font-semibold text-white/80">{sub}</span>}
+                  </div>
+                  <span className="text-[9px] md:text-[10px] text-white/50 uppercase tracking-[0.15em] font-medium max-w-[120px] leading-tight">
+                    {label}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* CTA — red filled */}
+            <Link
+              to="/about-us"
+              className="inline-block px-9 py-3 text-sm font-semibold rounded tracking-wide transition-all duration-300 hover:opacity-90 hover:scale-105"
+              style={{ background: '#e63535', color: '#fff' }}
+            >
+              Know more
+            </Link>
           </div>
-          
-          <h1 className="text-4xl sm:text-6xl md:text-[5.5rem] lg:text-[6.5rem] font-light tracking-tight leading-[1.05] mb-8 max-w-5xl opacity-0 animate-[apple-fade-up_1s_0.4s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-            Shaping land <br />
-            <span className="font-serif italic font-normal text-sage font-cursive block sm:inline mt-2 sm:mt-0">creating value</span>
-          </h1>
-          
-          <p className="text-base sm:text-lg text-white/60 max-w-2xl font-light leading-relaxed mb-16 px-4 opacity-0 animate-[apple-fade-up_1s_0.6s_cubic-bezier(0.16,1,0.3,1)_forwards]">
-            KVS Infra is a real estate development company specializing in residential projects, strategic land banking, land aggregation, and premium plotted communities. Since 2019, we have been creating long-term value through carefully planned developments, with a footprint expanding from Tirupati to Hyderabad, Chennai, and Bangalore.
-          </p>
-
         </div>
       </section>
 
-      {/* 2. SHOWCASE EXHIBITION ("Luxury Lives Here") */}
-<section className="py-24 px-4 sm:px-6 lg:px-12 max-w-[1440px] mx-auto relative z-20 overflow-hidden">
-  
-  {/* Header: Cinematic Reveal with Text Mask Tracking */}
-  <div className="flex flex-col lg:flex-row justify-between mb-16 gap-12 relative group/header">
-    <div className="flex-1 max-w-xl text-left flex flex-col justify-center">
-      <h2 className="text-6xl md:text-[5.5rem] font-light tracking-tight text-white mb-0 leading-[1.1]">
-        Land Becomes
-      </h2>
-      <h2 className="text-6xl md:text-[6.5rem] font-serif italic font-normal text-sage font-cursive mb-8 leading-[1.1]">
-        Legacy
-      </h2>
-      <p className="text-base md:text-lg text-white/80 max-w-md font-light leading-relaxed">
-        We transform strategically located land into planned communities and investment opportunities, delivering <span className="text-sage font-medium">sustainable growth</span> and <span className="text-sage font-medium">lasting value</span> for generations.
-      </p>
-    </div>
+      {/* 3. LEADERSHIP SECTION */}
+      <section className="pt-20 pb-16 px-6 sm:px-12 lg:px-20 bg-white">
+        {/* Heading */}
+        <h2 className="text-3xl md:text-4xl font-light text-center text-gray-800 mb-14 tracking-tight">
+          Leadership
+        </h2>
 
-    <div className="flex-1 w-full lg:max-w-[700px] relative">
-      <div className="relative w-full h-[400px] md:h-[420px] rounded-[1.5rem] overflow-hidden border border-white/[0.05]">
-        <img 
-          src="/images/kvs/hero.jpg" 
-          alt="Legacy Landscape" 
-          className="absolute inset-0 w-full h-full object-cover"
+        {/* Two cards */}
+        <div className="flex flex-col sm:flex-row justify-center gap-10 max-w-4xl mx-auto">
+
+          {[
+            {
+              name: 'CHEVIREDDY MOHITH REDDY',
+              title: 'Managing Director',
+              photo: '/images/client_rs.png',
+              points: [
+                'Over 7 years of experience in land development, project planning, and strategic land banking across Tirupati, Hyderabad, Chennai and Bangalore.',
+                'Successfully acquired, developed and delivered 1,000+ acres of premium agricultural and non-agricultural land to MNCs and private investors.',
+              ],
+            },
+            {
+              name: 'HARSHITH CHEVIREDDY',
+              title: 'Director',
+              photo: '/images/client_pn.png',
+              points: [
+                'Leads business development, investor relations and expansion strategy for KVS Infra across new geographies.',
+                'Drives digital initiatives, client engagement and marketing operations ensuring best-in-class customer experience.',
+              ],
+            },
+          ].map(({ name, title, photo, points }) => (
+            <div
+              key={name}
+              className="flex-1 max-w-sm mx-auto flex flex-col items-center text-center bg-[#f5f5f5] rounded-2xl px-8 pt-0 pb-10 relative"
+            >
+              {/* Circular photo — overflows card top */}
+              <div
+                className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg -mt-14 mb-5 bg-gray-200 flex-shrink-0"
+              >
+                <img
+                  src={photo}
+                  alt={name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              {/* Name */}
+              <p className="text-xs font-bold tracking-widest mb-1" style={{ color: '#7cb342' }}>
+                {name}
+              </p>
+
+              {/* Title */}
+              <p className="text-sm font-semibold text-gray-800 mb-5">{title}</p>
+
+              {/* Bullet points */}
+              <ul className="text-left text-sm text-gray-600 leading-relaxed space-y-3">
+                {points.map((pt, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* PROJECTS SECTION */}
+      <section className="py-16 px-6 sm:px-12 lg:px-20 bg-white">
+
+        {/* Header */}
+        <div className="text-center mb-10">
+          <p className="text-xs font-bold tracking-[0.25em] uppercase mb-3" style={{ color: '#1a2b5e' }}>
+            Portfolio
+          </p>
+          <h2 className="text-3xl md:text-4xl font-light text-gray-800 tracking-tight">
+            Our Projects
+          </h2>
+          <div className="mt-4 mx-auto w-12 h-0.5 rounded-full" style={{ background: '#e63535' }} />
+        </div>
+
+        {/* Horizontal scroll row */}
+        <div
+          className="flex gap-5 overflow-x-auto pb-4"
+          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+        >
+          <style>{`.proj-scroll::-webkit-scrollbar { display: none; }`}</style>
+
+          {[
+            'CMR Gardens',
+            'KVS Prakruti Vanam',
+            'KVS Pudi',
+            'KVS Vakulamatha',
+            'KVS Harekrishna',
+            'KVS Manglam',
+            'Attibele Construction — Panjajanya',
+          ].map((name) => (
+            <div
+              key={name}
+              className="proj-card group flex-shrink-0 w-52 h-40 rounded-2xl flex items-center justify-center text-center px-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+              style={{ background: '#1a2b5e' }}
+            >
+              <span
+                className="text-white font-semibold text-sm leading-snug group-hover:text-[#e63535] transition-colors duration-300"
+              >
+                {name}
+              </span>
+            </div>
+          ))}
+        </div>
+
+      </section>
+
+      {/* CLIENTS SECTION */}
+      <section className="relative py-20 px-6 sm:px-12 lg:px-20 overflow-hidden">
+        {/* Background */}
+        <img
+          src="/images/kvs/aerial-2.jpg"
+          alt="background"
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0F14] via-[#0D0F14]/60 to-transparent"></div>
-        
-        <div className="absolute left-6 md:left-8 top-1/2 -translate-y-1/2 w-[240px] md:w-[260px] bg-[#141414]/60 backdrop-blur-md border border-white/[0.08] rounded-[2rem] flex flex-col">
-          <div className="flex items-center gap-4 px-5 py-6 border-b border-white/[0.08]">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center shrink-0 text-white">
-              <Building2 className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
-            </div>
-            <span className="text-sm md:text-[15px] text-white font-light leading-tight">Strategic<br />Locations</span>
-          </div>
-          <div className="flex items-center gap-4 px-5 py-6 border-b border-white/[0.08]">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center shrink-0 text-white">
-              <TrendingUp className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
-            </div>
-            <span className="text-sm md:text-[15px] text-white font-light leading-tight">Sustainable<br />Growth</span>
-          </div>
-          <div className="flex items-center gap-4 px-5 py-6">
-            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/30 flex items-center justify-center shrink-0 text-white">
-              <Users className="w-5 h-5 md:w-6 md:h-6" strokeWidth={1.5} />
-            </div>
-            <span className="text-sm md:text-[15px] text-white font-light leading-tight">Lasting Value<br />for Generations</span>
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, #0f1923 0%, #1a2b5e 100%)' }} />
+
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl mx-auto text-center">
+
+          {/* Header */}
+          <p className="text-xs font-bold tracking-[0.28em] uppercase mb-3" style={{ color: '#e63535' }}>
+            Our Clients
+          </p>
+          <h2 className="text-3xl md:text-4xl font-light text-white tracking-tight mb-12">
+            Trusted by Industry Leaders
+          </h2>
+
+          {/* Glassmorphism grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            {[
+              { name: 'Aurobindo',  sub: 'Pharmaceuticals & Real Estate' },
+              { name: 'TVS',        sub: 'Mobility & Infrastructure'      },
+              { name: 'Ramky',      sub: 'Infrastructure & Development'   },
+            ].map(({ name, sub }) => (
+              <div
+                key={name}
+                className="group relative flex flex-col items-center justify-center py-10 px-6 rounded-2xl cursor-default transition-all duration-400 hover:-translate-y-1"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  backdropFilter: 'blur(20px)',
+                  WebkitBackdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255,255,255,0.12)',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.25)',
+                }}
+              >
+                {/* Hover glow */}
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                  style={{ boxShadow: '0 0 40px rgba(230,53,53,0.2)' }}
+                />
+
+                {/* Red accent line at top */}
+                <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: '#e63535' }} />
+
+                {/* Client name */}
+                <p className="text-2xl font-bold text-white tracking-wide group-hover:text-[#e63535] transition-colors duration-300">
+                  {name}
+                </p>
+
+                {/* Sub-label */}
+                <p className="text-xs text-white/45 mt-2 tracking-wide leading-snug">
+                  {sub}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </section>
 
-  {/* Fluid Apple Spatial Canvas Grid */}
+      {/* 4. FEATURED PROPERTIES GRID */}
+
+
+      <section className="py-24 px-4 sm:px-6 lg:px-12 max-w-[1440px] mx-auto relative z-20 overflow-hidden">
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
     {featuredProperties.map((property, index) => (
       <div 
@@ -245,196 +442,8 @@ export default function Home() {
   `}</style>
 </section>
 
-      {/* 3. ASYMMETRIC BENTO GRID SPLITS */}
-      <section className="py-16 px-4 sm:px-6 lg:px-12 max-w-[1440px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          
-          {/* Bento Left: For Buyers */}
-          <div className="lg:col-span-7 relative min-h-[640px] flex items-end p-8 md:p-16 overflow-hidden group rounded-[2.5rem] bg-white/[0.01] border border-white/[0.06] shadow-2xl">
-            {/* Asset Engine */}
-            <div className="absolute inset-0 z-0">
-              <img 
-                src="/images/kvs/aerial-1.jpg" 
-                alt="KVS Infra land development corridor in Tirupati" 
-                className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 filter grayscale-[20%]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07090E] via-[#07090E]/40 to-transparent"></div>
-            </div>
-            
-            <div className="relative z-10 max-w-xl text-left">
-              <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6 text-sage">
-                <Compass className="w-5 h-5" />
-              </div>
-              <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-sage mb-3 block">Investment Guide</span>
-              <h3 className="text-3xl md:text-5xl font-light tracking-tight text-white mb-5">
-                Growth <span className="font-serif italic font-normal text-sage font-cursive">Opportunities</span>
-              </h3>
-              <p className="text-sm md:text-base text-white/50 font-light leading-relaxed mb-8 max-w-md">
-                Discover strategically selected land opportunities designed for long-term appreciation, transparent planning, and sustainable investment growth.
-              </p>
-              <Link 
-                to="/for-buyers" 
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white group-hover:text-sage transition-colors duration-300 cursor-pointer"
-              >
-                <span>Explore Opportunities</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
 
-          {/* Bento Right: About Barbados */}
-          <div className="lg:col-span-5 relative min-h-[640px] flex items-end p-8 md:p-16 overflow-hidden group rounded-[2.5rem] bg-white/[0.01] border border-white/[0.06] shadow-2xl">
-            {/* Asset Engine */}
-            <div className="absolute inset-0 z-0">
-              <img 
-                src="/images/kvs/aerial-2.jpg" 
-                alt="KVS Infra project planning and infrastructure view" 
-                className="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-all duration-[1.5s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 filter grayscale-[20%]"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07090E] via-[#07090E]/40 to-transparent"></div>
-            </div>
-            
-            <div className="relative z-10 max-w-md text-left">
-              <div className="w-10 h-10 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6 text-sage">
-                <HomeIcon className="w-5 h-5" />
-              </div>
-              <span className="text-[9px] uppercase font-bold tracking-[0.3em] text-sage mb-3 block">Development Model</span>
-              <h3 className="text-3xl md:text-5xl font-light tracking-tight text-white mb-5">
-                Our <span className="font-serif italic font-normal text-sage font-cursive">Development Strategy</span>
-              </h3>
-              <p className="text-sm md:text-base text-white/50 font-light leading-relaxed mb-8">
-                From strategic land acquisition to master-planned layouts, our development model is built to unlock value through disciplined planning and future-ready infrastructure.
-              </p>
-              <Link 
-                to="/about-barbados" 
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white group-hover:text-sage transition-colors duration-300 cursor-pointer"
-              >
-                <span>Learn More</span>
-                <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
 
-        </div>
-      </section>
-
-      {/* 4. THEATER SCRIM TESTIMONIAL STAGE */}
-      <section className="py-40 px-4 sm:px-6 lg:px-12 bg-gradient-to-b from-[#07090E] via-white/[0.01] to-[#07090E] relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[350px] bg-[#1E293B]/20 rounded-full blur-[160px] pointer-events-none"></div>
-        
-        <div className="max-w-5xl mx-auto text-center flex flex-col items-center relative z-10">
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-6 block">
-            Client Perspectives
-          </span>
-          
-          {/* Dynamic Window Engine */}
-          <div className="min-h-[380px] sm:min-h-[320px] flex items-center justify-center relative w-full select-none">
-            {testimonials.map((t, idx) => (
-              <div 
-                key={idx}
-                className={`transition-all duration-[1000ms] ease-[cubic-bezier(0.25,1,0.5,1)] absolute w-full max-w-4xl px-4 transform flex flex-col items-center ${
-                  idx === activeTestimonial 
-                    ? 'opacity-100 scale-100 translate-y-0 filter blur-0' 
-                    : 'opacity-0 scale-[0.95] translate-y-8 filter blur-md pointer-events-none'
-                }`}
-              >
-                {t.image && (
-                  <div className="w-20 h-20 rounded-full overflow-hidden border border-sage/40 mb-6 shadow-xl shadow-black/50 transition-all duration-700">
-                    <img src={t.image} alt={t.author} className="w-full h-full object-cover" />
-                  </div>
-                )}
-                <blockquote className="font-serif text-2xl sm:text-4xl italic leading-snug text-white/90 font-light tracking-wide font-cursive">
-                  "{t.text}"
-                </blockquote>
-                <div className="flex items-center justify-center gap-3 mt-8">
-                  <span className="h-[1px] w-6 bg-sage/30"></span>
-                  <cite className="text-[10px] uppercase tracking-[0.3em] font-bold text-sage not-italic">
-                    Validated Portfolio Client {t.author}
-                  </cite>
-                  <span className="h-[1px] w-6 bg-sage/30"></span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Interactive Navigation Track */}
-          <div className="flex items-center gap-6 mt-14">
-            <button 
-              onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-              className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all cursor-pointer"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            
-            <div className="flex gap-2">
-              {testimonials.map((_, idx) => (
-                <button 
-                  key={idx}
-                  onClick={() => setActiveTestimonial(idx)}
-                  className={`h-1 rounded-full transition-all duration-500 ease-out cursor-pointer ${
-                    idx === activeTestimonial ? 'w-6 bg-white' : 'w-1 bg-white/20'
-                  }`}
-                ></button>
-              ))}
-            </div>
-
-            <button 
-              onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-              className="w-10 h-10 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-white/10 hover:scale-105 active:scale-95 transition-all cursor-pointer"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. IMMERSIVE NEWSLETTER VAULT */}
-      <section className="py-32 px-4 sm:px-6 lg:px-12 max-w-6xl mx-auto relative z-20">
-        <div className="relative bg-gradient-to-b from-white/[0.02] to-transparent border border-white/[0.06] rounded-[3rem] p-8 md:p-20 overflow-hidden shadow-3xl text-center flex flex-col items-center">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-          
-          <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-4 block">
-            Intelligence Network
-          </span>
-          <h2 className="text-3xl sm:text-5xl font-light tracking-tight text-white mb-6 max-w-2xl leading-tight">
-            Stay Updated on Our <span className="font-serif italic font-normal text-sage font-cursive block sm:inline">latest developments</span>
-          </h2>
-          
-          {/* Subscriptions Array Input Layout */}
-          <form 
-            onSubmit={handleSubscribe}
-            className="w-full max-w-md flex flex-col sm:flex-row gap-2.5 mb-10 relative z-10 mt-4"
-          >
-            <input 
-              type="email" 
-              required
-              placeholder="Enter your email address"
-              className="flex-grow bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/20 focus:bg-white/[0.06] transition-all placeholder:text-white/30"
-            />
-            <button 
-              type="submit"
-              className="bg-white text-[#07090E] hover:bg-sage font-semibold text-sm px-8 py-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shrink-0 active:scale-95 cursor-pointer shadow-lg"
-            >
-              {subscribed ? (
-                <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 stroke-[3]" />
-                  <span>Subscribed</span>
-                </div>
-              ) : (
-                <span>Subscribe</span>
-              )}
-            </button>
-          </form>
-
-          {/* Privacy Footprint */}
-          <div className="flex items-start gap-3 max-w-3xl text-left border-t border-white/[0.04] pt-8">
-            <ShieldCheck className="w-4 h-4 text-white/20 shrink-0 mt-0.5" />
-            <p className="text-[10px] text-white/30 leading-relaxed text-justify">
-              Subscribe to receive updates about upcoming layouts, investment opportunities, and project launches from KVS Infra. You may unsubscribe at any time.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Cinematic Engine Keyframes Style Segment */}
       <style>{`

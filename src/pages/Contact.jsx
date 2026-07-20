@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, MapPin, CheckCircle, Clock, Phone } from 'lucide-react';
+import { Mail, MapPin, CheckCircle, Clock, Phone, Globe } from 'lucide-react';
 
 export default function Contact() {
   useEffect(() => {
@@ -79,38 +79,65 @@ export default function Contact() {
               {/* Contact Icons Column */}
               <div className="relative z-10 flex flex-col gap-6 border-t border-white/[0.08] pt-8">
                 
-                {/* Phone */}
-                <a href="tel:+919000239333" className="flex items-center gap-4 group text-left">
-                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300">
+                {/* Phone 1 */}
+                <a href="tel:+919478899999" className="flex items-center gap-4 group text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300 shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">PHONE</span>
-                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 9000239333</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 9478899999</span>
+                  </div>
+                </a>
+
+                {/* Phone 2 */}
+                <a href="tel:+919700703020" className="flex items-center gap-4 group text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300 shrink-0">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">PHONE</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 9700703020</span>
                   </div>
                 </a>
 
                 {/* Email */}
-                <a href="mailto:harshith@kvsinfra.com" className="flex items-center gap-4 group text-left">
-                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300">
+                <a href="mailto:md@kvsgroup.co.in" className="flex items-center gap-4 group text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300 shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">EMAIL</span>
-                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">harshith@kvsinfra.com</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">md@kvsgroup.co.in</span>
                   </div>
                 </a>
 
-
+                {/* Website */}
+                <a href="https://www.kvsgroup.co.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group text-left">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300 shrink-0">
+                    <Globe className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">WEBSITE</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">www.kvsgroup.co.in</span>
+                  </div>
+                </a>
 
                 {/* Address / Headquarters */}
                 <div className="flex items-start gap-4 text-left">
-                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage shrink-0">
+                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage shrink-0 mt-1">
                     <MapPin className="w-4 h-4" />
                   </div>
                   <div>
-                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">ADDRESS</span>
-                    <span className="text-xs font-medium text-white/90 block">1-4,Thummalagunta,Tirupati Rural, Tirupati District-517502</span>
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-1">ADDRESS</span>
+                    <span className="text-[11px] font-medium text-white/90 block mb-2 leading-tight">
+                      <strong className="text-white/50 block text-[9px] mb-0.5 uppercase tracking-wider font-bold">Corporate</strong>
+                      Auro Galaxy, Hyderabad
+                    </span>
+                    <span className="text-[11px] font-medium text-white/90 block leading-tight">
+                      <strong className="text-white/50 block text-[9px] mb-0.5 uppercase tracking-wider font-bold">Registered</strong>
+                      1-4, Thummalagunta, Tirupati Rural, Tirupati District-517502
+                    </span>
                   </div>
                 </div>
 
