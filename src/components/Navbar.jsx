@@ -110,13 +110,13 @@ const navLinks = [
 
         {/* Contact Info in Mobile Menu */}
         <div className="flex flex-col gap-4 border-t border-dark-blue/10 pt-6">
-          <a href="tel:+919000239333" className="flex items-center gap-3 text-dark-blue/80 hover:text-dark-blue">
+          <a href="tel:+919247999799" className="flex items-center gap-3 text-dark-blue/80 hover:text-dark-blue">
             <Phone className="w-5 h-5 text-sage" />
-            <span>+91 9000239333</span>
+            <span>+91 9247999799</span>
           </a>
-          <a href="mailto:harshith@kvsinfra.com" className="flex items-center gap-3 text-dark-blue/80 hover:text-dark-blue mt-2">
+          <a href="mailto:info@kvsgroup.co.in" className="flex items-center gap-3 text-dark-blue/80 hover:text-dark-blue mt-2">
             <Mail className="w-5 h-5 text-sage" />
-            <span>harshith@kvsinfra.com</span>
+            <span>info@kvsgroup.co.in</span>
           </a>
           <p className="text-xs text-dark-blue/50 mt-4">
             &copy; 2026 KVS Infra Pvt. Ltd.

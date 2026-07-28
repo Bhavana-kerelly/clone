@@ -331,13 +331,13 @@ export default function PropertyDetail() {
             )}
 
             <div className="border-t border-white/15 pt-6 mt-2 flex flex-col gap-4 text-xs text-white/70">
-              <a href="tel:+919000239333" className="flex items-center gap-3 hover:text-sage transition-colors">
+              <a href="tel:+919247999799" className="flex items-center gap-3 hover:text-sage transition-colors">
                 <Phone className="w-4 h-4 text-sage" />
-                <span>Phone: +91 9000239333</span>
+                <span>Phone: +91 9247999799</span>
               </a>
-              <a href="mailto:harshith@kvsinfra.com" className="flex items-center gap-3 hover:text-sage transition-colors">
+              <a href="mailto:info@kvsgroup.co.in" className="flex items-center gap-3 hover:text-sage transition-colors">
                 <Mail className="w-4 h-4 text-sage" />
-                <span>Email: harshith@kvsinfra.com</span>
+                <span>Email: info@kvsgroup.co.in</span>
               </a>
             </div>
           </div>

@@ -110,11 +110,11 @@ export default function AboutUs() {
   }, []);
 
   const testimonials = [
-    { text: "KVS Infra made our land investment simple and transparent. The team's integrity and professional advice made the process an enjoyable experience.", author: "M.R." },
-    { text: "I want to thank KVS Infra personally for helping my family secure our first residential plot in Hyderabad. The layout and infrastructure are perfect.", author: "C.B." },
-    { text: "Thank you to the KVS team—your legal transparency and professionalism assisted greatly in our plot registration.", author: "K.C." },
-    { text: "We could not have hoped to find a better real estate partner. They supported us at every stage of buying our villa plots.", author: "D.M." },
-    { text: "We invested in KVS Green County and the appreciation has been remarkable. Their honest approach and prompt delivery exceeded our expectations.", author: "D.B." }
+    { text: "KVS Infra made our land investment simple and transparent. The team's integrity and professional advice made the process an enjoyable experience.", author: "Manish Reddy" },
+    { text: "I want to thank KVS Infra personally for helping my family secure our first residential plot in Hyderabad. The layout and infrastructure are perfect.", author: "Chiranjeevi B." },
+    { text: "Thank you to the KVS team—your legal transparency and professionalism assisted greatly in our plot registration.", author: "Karthik C." },
+    { text: "We could not have hoped to find a better real estate partner. They supported us at every stage of buying our villa plots.", author: "Dinesh Menon" },
+    { text: "We invested in KVS Green County and the appreciation has been remarkable. Their honest approach and prompt delivery exceeded our expectations.", author: "Deepak B." }
   ];
 
   // Double up listings pool internally to build seamless rolling horizon parameters
@@ -162,7 +162,7 @@ export default function AboutUs() {
           <div className="w-12 h-[1px] bg-[#c4a468] mb-2"></div>
           
           <p className="text-sm sm:text-base text-white/80 leading-relaxed font-light text-justify">
-            Under the vision of our Managing Director, Chevireddy Mohith Reddy, KVS Infra has established a robust customer base, successfully acquiring, developing, and selling over 1,000+ acres of premium agricultural and non-agricultural land to multinational corporations (MNCs) and private investors. Starting from Tirupati, we are expanding our horizons and building our footprints across Hyderabad, Chennai, and Bangalore with high-value residential and plotted projects.
+            Under the vision of our Managing Director, Chevireddy Mohith Reddy (MS LONDON), KVS Infra has established a robust customer base, successfully acquiring, developing, and selling over 1,000+ acres of premium agricultural and non-agricultural land to multinational corporations (MNCs) and private investors. Starting from Tirupati, we are expanding our horizons and building our footprints across Hyderabad, Chennai, and Bangalore with high-value residential and plotted projects.
           </p>
 
           {/* Premium Glassmorphism Credentials Panel Grid */}

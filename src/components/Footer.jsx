@@ -64,7 +64,7 @@ export default function Footer() {
         setIsHovered(false);
         setCoords({ x: 0, y: 0 });
       }}
-      className="relative min-h-screen flex items-center justify-center pt-32 pb-16 px-4 sm:px-6 lg:px-16 overflow-hidden bg-[#05080E] text-white selection:bg-sage/20 selection:text-sage"
+      className="relative w-full flex items-center justify-center pt-16 pb-16 px-4 sm:px-6 lg:px-16 overflow-hidden bg-[#05080E] text-white selection:bg-sage/20 selection:text-sage"
       style={{ perspective: '2000px' }}
     >
 
@@ -105,96 +105,30 @@ export default function Footer() {
         }}
       >
 
-        {/* SECTION A: GLOWING GLASS-DECK METRICS GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-24 border-b border-white/[0.05]" style={{ transform: 'translateZ(40px)' }}>
 
-          {/* Deck Block 1 */}
-          <div className="group relative bg-[#07090e]/50 hover:bg-[#07090e]/30 border border-white/[0.05] hover:border-sage/30 rounded-[2.5rem] p-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col gap-6">
-            <div className="w-full h-44 rounded-[1.5rem] overflow-hidden relative">
+
+        {/* SECTION A2: BRANCHES GRID */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-24 border-b border-white/[0.05]" style={{ transform: 'translateZ(40px)' }}>
+          {[
+            { name: 'Hyderabad', image: '/images/kvs/branch-1.jpg' },
+            { name: 'Bangalore', image: '/images/kvs/branch-2.jpg' },
+            { name: 'Tirupati', image: '/images/kvs/branch-3.jpg' },
+            { name: 'Chennai', image: '/images/kvs/branch-4.jpg' }
+          ].map((branch) => (
+            <div key={branch.name} className="group relative bg-[#07090e]/50 hover:bg-[#07090e]/30 border border-white/[0.05] hover:border-sage/30 rounded-[2.5rem] overflow-hidden transition-all duration-700 h-80 hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)]">
               <img 
-                src="/images/kvs/project-3.jpg" 
-                alt="Projects & Developments" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src={branch.image} 
+                alt={branch.name} 
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07090e]/40 to-transparent"></div>
-            </div>
-            
-            <div className="flex flex-col gap-4 relative z-10">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-5xl font-light tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
-                  25+
-                </span>
-                <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
-                  <Layers className="w-4 h-4" />
-                </div>
-              </div>
-              <div>
-                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">PROJECTS & DEVELOPMENTS</h5>
-                <p className="text-sm text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors">
-                  Successfully delivering plotted developments, land aggregation, and infrastructure-led projects across high-growth investment corridors.
-                </p>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#05080E] via-[#05080E]/20 to-transparent"></div>
+              <div className="absolute inset-0 flex items-end p-8 pointer-events-none">
+                <h3 className="text-2xl font-display font-medium text-white tracking-wide group-hover:text-sage transition-colors duration-300 transform translate-y-2 group-hover:translate-y-0">
+                  {branch.name}
+                </h3>
               </div>
             </div>
-          </div>
-
-          {/* Deck Block 2 */}
-          <div className="group relative bg-[#07090e]/50 hover:bg-[#07090e]/30 border border-white/[0.05] hover:border-sage/30 rounded-[2.5rem] p-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col gap-6">
-            <div className="w-full h-44 rounded-[1.5rem] overflow-hidden relative">
-              <img 
-                src="/images/kvs/growth-hero.jpg" 
-                alt="Strategic Growth Corridors" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07090e]/40 to-transparent"></div>
-            </div>
-
-            <div className="flex flex-col gap-4 relative z-10">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-5xl font-light tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
-                  3+
-                </span>
-                <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
-                  <Globe className="w-4 h-4" />
-                </div>
-              </div>
-              <div>
-                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">STRATEGIC GROWTH CORRIDORS</h5>
-                <p className="text-sm text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors">
-                  Expanding across Tirupati, Hyderabad, Chennai, and Bangalore with carefully selected locations for long-term appreciation.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Deck Block 3 */}
-          <div className="group relative bg-[#07090e]/50 hover:bg-[#07090e]/30 border border-white/[0.05] hover:border-sage/30 rounded-[2.5rem] p-6 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:shadow-[0_40px_80px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col gap-6">
-            <div className="w-full h-44 rounded-[1.5rem] overflow-hidden relative">
-              <img 
-                src="/images/kvs/sustainable.jpg" 
-                alt="Commitment to Trust" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07090e]/40 to-transparent"></div>
-            </div>
-
-            <div className="flex flex-col gap-4 relative z-10">
-              <div className="flex items-center justify-between">
-                <span className="font-display text-5xl font-light tracking-tight bg-gradient-to-r from-sage via-white to-sage bg-[length:200%_auto] bg-clip-text text-transparent group-hover:bg-position-x-100 transition-all duration-1000">
-                  100%
-                </span>
-                <div className="w-10 h-10 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-center text-sage group-hover:rotate-12 transition-transform duration-500">
-                  <ShieldCheck className="w-4 h-4" />
-                </div>
-              </div>
-              <div>
-                <h5 className="text-[10px] font-bold tracking-[0.3em] uppercase text-sage mb-2">COMMITMENT TO TRUST</h5>
-                <p className="text-sm text-white/40 font-light leading-relaxed group-hover:text-white/60 transition-colors">
-                  Delivering transparent processes, clear documentation, disciplined execution, and lasting value for every investor.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          ))}
         </div>
 
         {/* SECTION B: TRANSLUCENT NAVIGATION STAGE HUB */}
@@ -244,26 +178,18 @@ export default function Footer() {
 
             {/* Column 2 - Contact Info */}
             <div className="flex flex-col gap-4 w-full text-sm">
-              <a href="tel:+919478899999" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+              <a href="tel:+919247999799" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
-                  <span className="font-light">+91 9478899999</span>
-                </div>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
-              </a>
-
-              <a href="tel:+919700703020" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
-                  <span className="font-light">+91 9700703020</span>
+                  <span className="font-light">+91 9247999799</span>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
               </a>
               
-              <a href="mailto:md@kvsgroup.co.in" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
+              <a href="mailto:info@kvsgroup.co.in" className="group/link flex items-center justify-between text-white/60 hover:text-white transition-colors duration-300">
                 <div className="flex items-center gap-3">
                   <Mail className="w-4 h-4 opacity-40 group-hover/link:opacity-100 text-sage transition-opacity" />
-                  <span className="font-light">md@kvsgroup.co.in</span>
+                  <span className="font-light">info@kvsgroup.co.in</span>
                 </div>
                 <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-1 group-hover/link:opacity-60 group-hover/link:translate-y-0 group-hover/link:translate-x-0 transition-all duration-300" />
               </a>

@@ -134,20 +134,6 @@ export default function HeroSection() {
             className="hfs-img"
             draggable={false}
           />
-          <div className="hfs-vignette" />
-          
-          {slide.heading && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-10 px-6 mt-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white tracking-tight mb-6 max-w-4xl drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
-                {slide.heading}
-              </h1>
-              {slide.subheading && (
-                <p className="text-sm md:text-lg lg:text-xl text-white max-w-3xl font-light leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] mx-auto">
-                  {slide.subheading}
-                </p>
-              )}
-            </div>
-          )}
         </div>
       ))}
 
@@ -178,7 +164,6 @@ export default function HeroSection() {
         .hfs-slide {
           position: absolute;
           inset: 0;
-          will-change: transform, opacity;
           overflow: hidden;
         }
 
@@ -190,18 +175,6 @@ export default function HeroSection() {
           object-position: center;
           display: block;
           user-select: none;
-          pointer-events: none;
-        }
-
-        /* Subtle bottom vignette */
-        .hfs-vignette {
-          position: absolute;
-          inset: 0;
-          background: linear-gradient(
-            to top,
-            rgba(0,0,0,0.5) 0%,
-            transparent 55%
-          );
           pointer-events: none;
         }
 

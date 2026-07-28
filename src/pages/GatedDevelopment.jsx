@@ -12,52 +12,60 @@ export default function GatedDevelopment() {
   // Custom Project Portfolio Data
   const developmentProjects = [
     {
-      id: "kvs-meadows",
-      location: "High-Growth Corridor",
-      name: "KVS Meadows",
-      badge: "High Appreciation",
-      stats: "Strategic Plotted Development",
+      id: "cmr-gardens",
+      location: "Tirupati-Chennai Highway",
+      name: "CMR Gardens",
+      badge: "TUDA Approved",
+      stats: "ISO 9001 • Swimming Pool",
       image: "/images/kvs/project-1.jpg"
     },
     {
-      id: "kvs-green-county",
-      location: "Planned Community",
-      name: "KVS Green County",
-      badge: "Investment Ready",
-      stats: "Premium Residential Layout",
+      id: "kvs-prakruti-vanam",
+      location: "Tirupati",
+      name: "KVS Prakruti Vanam",
+      badge: "Premium Community",
+      stats: "Eco-friendly • Modern Amenities",
       image: "/images/kvs/project-2.jpg"
     },
     {
-      id: "agricultural-estates",
-      location: "Agricultural Land",
-      name: "Agricultural Estates",
-      badge: "Long-Term Value",
-      stats: "Organic Farming & Plantation",
+      id: "kvs-pudi",
+      location: "Pudi, Tirupati",
+      name: "KVS Pudi",
+      badge: "Strategic Location",
+      stats: "Clear Title • Vaastu Compliant",
       image: "/images/kvs/project-3.jpg"
     },
     {
-      id: "strategic-land-banking",
-      location: "Investment Corridor",
-      name: "Strategic Land Banking",
-      badge: "Strategic Location",
-      stats: "Future Appreciation",
+      id: "kvs-vakulamatha",
+      location: "Tirupati",
+      name: "KVS Vakulamatha",
+      badge: "High Appreciation",
+      stats: "Excellent Connectivity",
       image: "/images/kvs/project-4.jpg"
     },
     {
-      id: "premium-plotted-layouts",
-      location: "Residential Development",
-      name: "Premium Plotted Layouts",
-      badge: "Infrastructure Ready",
-      stats: "Infrastructure Ready",
+      id: "kvs-harekrishna",
+      location: "Near Tiruchanur Temple",
+      name: "KVS Harekrishna",
+      badge: "Premium Plots",
+      stats: "Club House • Swimming Pool",
       image: "/images/kvs/project-5.jpg"
     },
     {
-      id: "future-growth-projects",
-      location: "Upcoming Opportunities",
-      name: "Future Growth Projects",
-      badge: "Future Growth",
-      stats: "Metro Expansion Corridor",
+      id: "kvs-manglam",
+      location: "Tirupati",
+      name: "KVS Manglam",
+      badge: "Luxury Living",
+      stats: "Integrated Township",
       image: "/images/kvs/project-6.jpg"
+    },
+    {
+      id: "attibele-construction",
+      location: "Attibele",
+      name: "Attibele Construction",
+      badge: "Urban Infrastructure",
+      stats: "Premium Construction",
+      image: "/images/kvs/project-7.jpg"
     }
   ];
 

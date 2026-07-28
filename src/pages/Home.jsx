@@ -136,7 +136,7 @@ export default function Home() {
               {[
                 { number: 25,   suffix: '+ Lakh', sub: 'Sq.Ft.', label: 'Developed & Sold' },
                 { number: 1000, suffix: '+',      sub: 'Acres',  label: 'Land Delivered' },
-                { number: 2019, suffix: '',       sub: '',       label: 'Established' },
+                { number: 1000, suffix: '+',      sub: 'Cr',     label: 'Group Turnover' },
                 { number: 4,    suffix: '+',      sub: 'Cities', label: 'Strong Presence' },
                 { number: 'Growing', suffix: '',  sub: '',       label: 'Metro Expansion' },
               ].map(({ number, suffix, sub, label }) => (
@@ -179,8 +179,9 @@ export default function Home() {
           {[
             {
               name: 'CHEVIREDDY MOHITH REDDY',
+              education: '(MS in London)',
               title: 'Managing Director',
-              photo: '/images/client_rs.png',
+              photo: '/logo.png',
               points: [
                 'Over 7 years of experience in land development, project planning, and strategic land banking across Tirupati, Hyderabad, Chennai and Bangalore.',
                 'Successfully acquired, developed and delivered 1,000+ acres of premium agricultural and non-agricultural land to MNCs and private investors.',
@@ -188,26 +189,27 @@ export default function Home() {
             },
             {
               name: 'HARSHITH CHEVIREDDY',
-              title: 'Director',
-              photo: '/images/client_pn.png',
+              education: '(MS in London)',
+              title: 'Executive Director',
+              photo: '/logo.png',
               points: [
                 'Leads business development, investor relations and expansion strategy for KVS Infra across new geographies.',
                 'Drives digital initiatives, client engagement and marketing operations ensuring best-in-class customer experience.',
               ],
             },
-          ].map(({ name, title, photo, points }) => (
+          ].map(({ name, education, title, photo, points }) => (
             <div
               key={name}
               className="flex-1 max-w-sm mx-auto flex flex-col items-center text-center bg-[#f5f5f5] rounded-2xl px-8 pt-0 pb-10 relative"
             >
               {/* Circular photo — overflows card top */}
               <div
-                className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg -mt-14 mb-5 bg-gray-200 flex-shrink-0"
+                className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg -mt-14 mb-5 bg-white flex-shrink-0"
               >
                 <img
                   src={photo}
                   alt={name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-2"
                 />
               </div>
 
@@ -215,6 +217,12 @@ export default function Home() {
               <p className="text-xs font-bold tracking-widest mb-1" style={{ color: '#7cb342' }}>
                 {name}
               </p>
+              
+              {education && (
+                <p className="text-[10px] font-bold tracking-widest mb-1" style={{ color: '#7cb342' }}>
+                  {education}
+                </p>
+              )}
 
               {/* Title */}
               <p className="text-sm font-semibold text-gray-800 mb-5">{title}</p>
@@ -255,24 +263,86 @@ export default function Home() {
           <style>{`.proj-scroll::-webkit-scrollbar { display: none; }`}</style>
 
           {[
-            'CMR Gardens',
-            'KVS Prakruti Vanam',
-            'KVS Pudi',
-            'KVS Vakulamatha',
-            'KVS Harekrishna',
-            'KVS Manglam',
-            'Attibele Construction — Panjajanya',
-          ].map((name) => (
+            { 
+              name: 'CMR Gardens', 
+              location: 'Tirupati-Chennai Highway', 
+              details: 'TUDA Approved • ISO 9001 • Swimming Pool • Mini Cinema Theater',
+              image: '/images/kvs/project-1.jpg' 
+            },
+            { 
+              name: 'KVS Prakruti Vanam', 
+              location: 'Tirupati', 
+              details: 'Premium Gated Community • Eco-friendly Living • Modern Amenities',
+              image: '/images/kvs/project-2.jpg' 
+            },
+            { 
+              name: 'KVS Pudi', 
+              location: 'Pudi, Tirupati', 
+              details: 'Strategic Location • Clear Title • Vaastu Compliant',
+              image: '/images/kvs/project-3.jpg' 
+            },
+            { 
+              name: 'KVS Vakulamatha', 
+              location: 'Tirupati', 
+              details: 'Excellent Connectivity • Peaceful Environment • High Appreciation',
+              image: '/images/kvs/project-4.jpg' 
+            },
+            { 
+              name: 'KVS Harekrishna', 
+              location: 'Near Tiruchanur Temple', 
+              details: 'Premium Residential Plots • Club House • Swimming Pool • Open Air Theatre',
+              image: '/images/kvs/project-5.jpg' 
+            },
+            { 
+              name: 'KVS Manglam', 
+              location: 'Tirupati', 
+              details: 'Luxury Living • Integrated Township • 24/7 Security',
+              image: '/images/kvs/project-6.jpg' 
+            },
+            { 
+              name: 'Attibele Construction', 
+              location: 'Attibele', 
+              details: 'Premium Construction • Urban Infrastructure',
+              image: '/images/kvs/project-7.jpg' 
+            },
+          ].map(({name, location, details, image}) => (
             <div
               key={name}
-              className="proj-card group flex-shrink-0 w-52 h-40 rounded-2xl flex items-center justify-center text-center px-5 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
-              style={{ background: '#1a2b5e' }}
+              className="proj-card group flex-shrink-0 w-72 h-[24rem] rounded-2xl flex flex-col overflow-hidden cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl border border-gray-100 bg-white"
             >
-              <span
-                className="text-white font-semibold text-sm leading-snug group-hover:text-[#e63535] transition-colors duration-300"
-              >
-                {name}
-              </span>
+              {/* Image Container */}
+              <div className="w-full h-44 overflow-hidden relative flex-shrink-0">
+                <img 
+                  src={image} 
+                  alt={name} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-3 left-4 right-4">
+                  <p className="text-white font-bold text-lg leading-tight group-hover:text-[#e63535] transition-colors">{name}</p>
+                  <p className="text-white/90 text-xs mt-1.5 flex items-center gap-1 font-medium tracking-wide">
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    {location}
+                  </p>
+                </div>
+              </div>
+              {/* Content Container */}
+              <div className="p-5 flex flex-col flex-grow bg-white">
+                <h4 className="text-[11px] font-bold tracking-widest text-[#1a2b5e] uppercase mb-3 border-b border-gray-100 pb-2">Project Highlights</h4>
+                <ul className="text-[13px] text-gray-600 space-y-2.5 mb-4 flex-grow">
+                  {details.split('•').map((detail, idx) => (
+                    <li key={idx} className="flex items-start gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#e63535] mt-1.5 flex-shrink-0"></span>
+                      <span className="leading-snug font-medium">{detail.trim()}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-auto w-full pt-3 border-t border-gray-100">
+                  <span className="text-[#e63535] text-xs font-bold uppercase tracking-wider flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Explore Project <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                  </span>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -303,10 +373,10 @@ export default function Home() {
           {/* Glassmorphism grid */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
-              { name: 'Aurobindo',  sub: 'Pharmaceuticals & Real Estate' },
-              { name: 'TVS',        sub: 'Mobility & Infrastructure'      },
-              { name: 'Ramky',      sub: 'Infrastructure & Development'   },
-            ].map(({ name, sub }) => (
+              { name: 'Aurobindo',  sub: 'Pharmaceuticals & Real Estate', logo: '/logos/autobind.png' },
+              { name: 'TVS',        sub: 'Mobility & Infrastructure',     logo: '/logos/tvs.png' },
+              { name: 'Ramky',      sub: 'Infrastructure & Development',  logo: '/logos/ramky.png' },
+            ].map(({ name, sub, logo }) => (
               <div
                 key={name}
                 className="group relative flex flex-col items-center justify-center py-10 px-6 rounded-2xl cursor-default transition-all duration-400 hover:-translate-y-1"
@@ -326,6 +396,15 @@ export default function Home() {
 
                 {/* Red accent line at top */}
                 <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: '#e63535' }} />
+
+                {/* Client Logo */}
+                {logo && (
+                  <img 
+                    src={logo} 
+                    alt={`${name} logo`} 
+                    className="h-20 w-auto max-w-[90%] object-contain p-3 mb-4 group-hover:scale-105 transition-transform duration-300 rounded-xl bg-white"
+                  />
+                )}
 
                 {/* Client name */}
                 <p className="text-2xl font-bold text-white tracking-wide group-hover:text-[#e63535] transition-colors duration-300">

@@ -16,6 +16,20 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Construct WhatsApp message
+    const message = `Hello KVS Infra,
+
+My name is ${formName}. 
+Phone: ${formPhone}
+Email: ${formEmail}
+
+Message: ${formMsg}`;
+
+    // Redirect to WhatsApp
+    const whatsappUrl = `https://wa.me/919247999799?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+
     setFormSent(true);
     setTimeout(() => {
       setFormSent(false);
@@ -80,35 +94,24 @@ export default function Contact() {
               <div className="relative z-10 flex flex-col gap-6 border-t border-white/[0.08] pt-8">
                 
                 {/* Phone 1 */}
-                <a href="tel:+919478899999" className="flex items-center gap-4 group text-left">
+                <a href="tel:+919247999799" className="flex items-center gap-4 group text-left">
                   <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300 shrink-0">
                     <Phone className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">PHONE</span>
-                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 9478899999</span>
-                  </div>
-                </a>
-
-                {/* Phone 2 */}
-                <a href="tel:+919700703020" className="flex items-center gap-4 group text-left">
-                  <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300 shrink-0">
-                    <Phone className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">PHONE</span>
-                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 9700703020</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">+91 9247999799</span>
                   </div>
                 </a>
 
                 {/* Email */}
-                <a href="mailto:md@kvsgroup.co.in" className="flex items-center gap-4 group text-left">
+                <a href="mailto:info@kvsgroup.co.in" className="flex items-center gap-4 group text-left">
                   <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-sage group-hover:bg-[#c4a468]/20 transition-all duration-300 shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="text-[9px] uppercase tracking-widest text-white/40 block font-bold mb-0.5">EMAIL</span>
-                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">md@kvsgroup.co.in</span>
+                    <span className="text-xs font-medium text-white/90 group-hover:text-sage transition-colors">info@kvsgroup.co.in</span>
                   </div>
                 </a>
 
