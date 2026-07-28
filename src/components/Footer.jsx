@@ -57,31 +57,20 @@ export default function Footer() {
   return (
     <footer
       ref={containerRef}
-      onClassName="bg-[#04060A]"
       onMouseMove={handleGlobalMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
         setCoords({ x: 0, y: 0 });
       }}
-      className="relative w-full flex items-center justify-center pt-16 pb-16 px-4 sm:px-6 lg:px-16 overflow-hidden bg-[#05080E] text-white selection:bg-sage/20 selection:text-sage"
+      className="relative w-full flex items-center justify-center pt-0 pb-8 px-4 sm:px-6 lg:px-16 overflow-hidden bg-[#07090E] text-white selection:bg-sage/20 selection:text-sage"
       style={{ perspective: '2000px' }}
     >
 
       {/* LAYER 1: CINEMATIC MULTI-AXIS PARALLAX VIEWPORT LAYER */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div
-          className="absolute inset-0 w-full h-[125%] -top-[15%] transition-transform duration-[400ms] ease-out will-change-transform"
-          style={{
-            transform: `translateY(${parallaxY}px) scale(1.05)`,
-            backgroundImage: `url('https://framerusercontent.com/images/HShh91vuIwRlSwYw9lAjYX7yg.jpg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center center'
-          }}
-        />
-        {/* Apple Luxury Atmospheric Glass Coatings */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#05080E] via-[#05080E]/90 to-[#05080E]/70 backdrop-blur-2xl mix-blend-normal"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-[#05080E]"></div>
+        {/* Removed textured background image to match the solid dark theme */}
+        <div className="absolute inset-0 bg-[#07090E]"></div>
 
         {/* Kinetic Light Beam Generator */}
         <div
@@ -108,7 +97,7 @@ export default function Footer() {
 
 
         {/* SECTION A2: BRANCHES GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-24 border-b border-white/[0.05]" style={{ transform: 'translateZ(40px)' }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-16 pb-16 border-b border-white/[0.05]" style={{ transform: 'translateZ(40px)' }}>
           {[
             { name: 'Hyderabad', image: '/images/kvs/branch-1.jpg' },
             { name: 'Bangalore', image: '/images/kvs/branch-2.jpg' },
@@ -123,7 +112,7 @@ export default function Footer() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#05080E] via-[#05080E]/20 to-transparent"></div>
               <div className="absolute inset-0 flex items-end p-8 pointer-events-none">
-                <h3 className="text-2xl font-display font-medium text-white tracking-wide group-hover:text-sage transition-colors duration-300 transform translate-y-2 group-hover:translate-y-0">
+                <h3 className="text-2xl font-sans font-medium text-white tracking-wide group-hover:text-sage transition-colors duration-300 transform translate-y-2 group-hover:translate-y-0">
                   {branch.name}
                 </h3>
               </div>
@@ -215,16 +204,11 @@ export default function Footer() {
         </div>
 
         {/* SECTION C: RADIAL BOUNDARY SUB FOOTER TERMINAL */}
-        <div className="border-t border-white/[0.05] pt-12 mt-4 flex flex-col md:flex-row justify-between items-center text-[11px] font-light text-white/30 gap-6" style={{ transform: 'translateZ(30px)' }}>
+        <div className="border-t border-white/[0.05] pt-6 mt-4 flex flex-col md:flex-row justify-between items-center text-[11px] font-light text-white/30 gap-6" style={{ transform: 'translateZ(30px)' }}>
           <p className="tracking-wide text-center md:text-left">
-            &copy; {new Date().getFullYear()} KVS Infra. All Rights Reserved. Designed to create sustainable land investments and long-term value.
+            &copy; {new Date().getFullYear()} KVS Infra. All Rights Reserved.
           </p>
-          <div className="flex gap-8 uppercase font-medium tracking-widest text-[9px]">
-            <a href="#" className="hover:text-white transition-colors duration-300">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors duration-300">Terms & Conditions</a>
-          </div>
         </div>
-
       </div>
 
       {/* Typography Serif Italic Configuration Engine */}
